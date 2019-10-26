@@ -14,7 +14,7 @@ public class TimedGame extends AppCompatActivity {
     private int numCorrect = 0;
 
     private NumTrack tracker = new NumTrack();
-    private GenerateProblem prob = new GenerateProblem(0, 10);
+    private GenerateProblem prob = new GenerateProblem(1, 10);
 
     /* set up page */
     private TextView timerText = findViewById(R.id.countdown);
