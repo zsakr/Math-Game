@@ -3,7 +3,9 @@ package edu.trincoll.dchitrak.mathgame;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -21,6 +23,11 @@ public class TimedGame extends AppCompatActivity {
     private GenerateProblem prob = new GenerateProblem(1, 10);
 
 
+    protected void displayProblem() {
+
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -34,16 +41,13 @@ public class TimedGame extends AppCompatActivity {
         final TextView num1Text = findViewById(R.id.num1);
         final TextView num2Text =  findViewById(R.id.num2);
         final TextView opText =  findViewById(R.id.operator);
-        EditText inputText = findViewById(R.id.guessInput);
-        int realAnswer = -999;
-
+        final EditText inputText = findViewById(R.id.guessInput);
 
         //init vars and screen
         prob.makeProblem();
         num1Text.setText(prob.getNum1()+"");
         num2Text.setText(prob.getNum2()+"");
         opText.setText(prob.getOp()+"");
-        realAnswer = prob.getResults();
 
 
         // create and display display a timer
@@ -81,16 +85,16 @@ public class TimedGame extends AppCompatActivity {
         });
 
 
-/*       // set up submit button
+       // set up submit button
         Button submitButton = findViewById(R.id.submitButton);
 
        submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String guessString = input.getText().toString();
+                String guessString = inputText.getText().toString();
                 int guess = Integer.parseInt(guessString);
 
-                if (guess == realAnswer) {  // problem answered correctly
+                if (guess == prob.getResults()) {  // problem answered correctly
 
                     numCorrect++;
                     Log.d("Answer", "Correct");
@@ -98,7 +102,7 @@ public class TimedGame extends AppCompatActivity {
                     Log.d("Answer", "Error");
                 }
             }
-        }); */
+        });
 
     }
 
