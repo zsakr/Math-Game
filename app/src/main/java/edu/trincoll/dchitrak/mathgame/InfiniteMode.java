@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class InfiniteMode extends AppCompatActivity {
 
-    private GenerateProblem problem = new GenerateProblem(0, 10);
+    private GenerateProblem problem = new GenerateProblem(1, 10);
     private NumTrack tracker = new NumTrack();
     private int number = 1;
 
