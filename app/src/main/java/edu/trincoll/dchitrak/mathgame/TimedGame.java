@@ -31,19 +31,19 @@ public class TimedGame extends AppCompatActivity {
         final TextView timerText = findViewById(R.id.countdown);
 
         // set up layout for problem
-        final TextView num1 = findViewById(R.id.num1);
-        final TextView num2 =  findViewById(R.id.num2);
-        final TextView op =  findViewById(R.id.operator);
-        EditText input = findViewById(R.id.guessInput);
+        final TextView num1Text = findViewById(R.id.num1);
+        final TextView num2Text =  findViewById(R.id.num2);
+        final TextView opText =  findViewById(R.id.operator);
+        EditText inputText = findViewById(R.id.guessInput);
         //int realAnswer = -999;
 
 
         //init vars and screen
         prob.makeProblem();
-//        num1.setText(prob.getNum1());
-//        num2.setText(prob.getNum2());
-//        op.setText(prob.getOp());
-//        //realAnswer = prob.getResults();
+        num1Text.setText(prob.getNum1()+"");
+        num2Text.setText(prob.getNum2()+"");
+        opText.setText(prob.getOp()+"");
+        //realAnswer = prob.getResults();
 
 
         // create and display display a timer
@@ -80,8 +80,9 @@ public class TimedGame extends AppCompatActivity {
             }
         });
 
+
 /*       // set up submit button
-        Button submitButton = (Button) findViewById(R.id.submitButton);
+        Button submitButton = findViewById(R.id.submitButton);
 
        submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
