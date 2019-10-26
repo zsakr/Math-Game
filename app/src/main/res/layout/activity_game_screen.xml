@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#6319"
+    android:background="#66FFFFFF"
     tools:context=".FixedGame">
 
     <TextView
@@ -26,8 +26,9 @@
         android:id="@+id/button2"
         android:layout_width="67dp"
         android:layout_height="62dp"
-        android:background="#ff0000"
+        android:background="#00BCD4"
         android:text="GO"
+        android:textColor="#FFFFFF"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -107,10 +108,10 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:textSize="35sp"
         android:layout_width="53dp"
         android:layout_height="49dp"
         android:text=""
+        android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.955"
