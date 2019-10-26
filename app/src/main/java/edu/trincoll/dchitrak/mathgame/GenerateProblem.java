@@ -9,6 +9,8 @@ public class GenerateProblem {
     private int num1;
     private int num2;
     private int opNum;
+    private String op;
+    private int results;
     Random rand = new Random();
 
     public GenerateProblem(int min, int max){
@@ -26,9 +28,25 @@ public class GenerateProblem {
         this.max = max;
     }
 
-    public void randNum(){
+    public void genarateParam(){
         num1 = rand.nextInt(max-min) + min;
         num2 = rand.nextInt(max-min) + min;
+        opNum = rand.nextInt(4);
+
+        if (opNum == 0){
+            op = "+";
+            results = num1+num2;
+        }else if(opNum == 1){
+            op = "-";
+            results = num1-num2;
+        }else if(opNum == 2){
+            op = "x";
+            results = num1*num2;
+        }else{
+            op = "/";
+            results = (num1%num2)+rand.nextInt((max-min)*2);
+            num1 = num2*results;
+        }
     }
 
     public int getNum1(){
@@ -37,5 +55,13 @@ public class GenerateProblem {
 
     public int getNum2(){
         return num2;
+    }
+
+    public String getOp(){
+        return op;
+    }
+
+    public int getResults(){
+        return results;
     }
 }
