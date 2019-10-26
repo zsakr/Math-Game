@@ -1,13 +1,12 @@
 package edu.trincoll.dchitrak.mathgame;
 
 import android.os.Bundle;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class TimedGame extends AppCompatActivity {
 
+    /*
     protected int counter = 0;
     protected final int MAXTIME = 5000;    // max time in millis
     protected final int SECOND = 1000;      // sec is 1000 millis
@@ -16,16 +15,18 @@ public class TimedGame extends AppCompatActivity {
     private NumTrack tracker = new NumTrack();
     private GenerateProblem prob = new GenerateProblem(1, 10);
 
-    /* set up page */
+    // set up page
     private TextView timerText = findViewById(R.id.countdown);
 
-    /* set up layout for problem */
+
+
+    // set up layout for problem
     private TextView num1 = (TextView) findViewById(R.id.num1);
     private TextView num2 = (TextView) findViewById(R.id.num2);
     private TextView op = (TextView) findViewById(R.id.operator);
     private EditText input = (EditText) findViewById(R.id.guessInput);
     private int realAnswer = -999;
-
+*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,12 +65,12 @@ public class TimedGame extends AppCompatActivity {
         }.start(); */
 
 
-  /*      //set up exit button, which returns to home page
-        ImageButton exitButton = (ImageButton) findViewById(R.id.exitButton);
-        exitButton.setOnClickListener(new View.OnClickListener() {
+       //set up exit button, which returns to home page
+/*        ImageButton exit = (ImageButton) findViewById(R.id.exitButton);
+        exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                timer.cancel();
+                //timer.cancel();
                 Intent startint = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(startint);
             }
