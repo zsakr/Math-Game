@@ -20,10 +20,10 @@ public class InfiniteMode extends AppCompatActivity {
 
 
     private void clearDisplay(){
-        TextView tv1 = (TextView) findViewById(R.id.textView);
-        TextView tv2 = (TextView) findViewById(R.id.textView2);
-        TextView tv3 = (TextView) findViewById(R.id.qsLeft);
-        TextView tv4 = (TextView) findViewById(R.id.textView3);
+        TextView tv1 = (TextView) findViewById(R.id.infNum1);
+        TextView tv2 = (TextView) findViewById(R.id.infNum2);
+        TextView tv3 = (TextView) findViewById(R.id.infQs);
+        TextView tv4 = (TextView) findViewById(R.id.infOp);
 
         problem.setResults(-999999);
         tv1.setText("");
@@ -35,10 +35,10 @@ public class InfiniteMode extends AppCompatActivity {
     private void displayProblem(){
 
         problem.genarateParam();
-        TextView tv1 = (TextView) findViewById(R.id.textView);
-        TextView tv2 = (TextView) findViewById(R.id.textView2);
-        TextView tv3 = (TextView) findViewById(R.id.qsLeft);
-        TextView tv4 = (TextView) findViewById(R.id.textView3);
+        TextView tv1 = (TextView) findViewById(R.id.infNum1);
+        TextView tv2 = (TextView) findViewById(R.id.infNum2);
+        TextView tv3 = (TextView) findViewById(R.id.infQs);
+        TextView tv4 = (TextView) findViewById(R.id.infOp);
 
 
         tv1.setText(problem.getNum1()+"");
@@ -50,7 +50,7 @@ public class InfiniteMode extends AppCompatActivity {
     }
 
     private void buttonClick(){
-        ImageButton exitButton = (ImageButton) findViewById(R.id.imageButton);
+        ImageButton exitButton = (ImageButton) findViewById(R.id.infExit);
         exitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,8 +59,8 @@ public class InfiniteMode extends AppCompatActivity {
             }
         });
 
-        final EditText ed = (EditText) findViewById(R.id.editText4);
-        Button press = (Button) findViewById(R.id.button2);
+        final EditText ed = (EditText) findViewById(R.id.infAns);
+        Button press = (Button) findViewById(R.id.infGo);
         press.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
