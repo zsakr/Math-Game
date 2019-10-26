@@ -15,7 +15,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class FixedGame extends AppCompatActivity {
-    private GenerateProblem problem = new GenerateProblem(11, 24);
+    private GenerateProblem problem = new GenerateProblem(0, 10);
     private NumTrack tracker = new NumTrack();
     private int numQues = 20;
     private int number = 1;

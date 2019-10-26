@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         infinitePress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startint = new Intent(getApplicationContext(), TimedGame.class);
+                Intent startint = new Intent(getApplicationContext(), InfiniteMode.class);
                 //startint.putExtra("com.example.twobutton.SOMETHING", "");
                 startActivity(startint);
             }

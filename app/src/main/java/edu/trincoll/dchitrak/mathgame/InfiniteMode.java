@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,7 +14,7 @@ import android.widget.TextView;
 
 public class InfiniteMode extends AppCompatActivity {
 
-    private GenerateProblem problem = new GenerateProblem(11, 24);
+    private GenerateProblem problem = new GenerateProblem(0, 10);
     private NumTrack tracker = new NumTrack();
     private int number = 1;
 
@@ -69,7 +70,7 @@ public class InfiniteMode extends AppCompatActivity {
                 if (finalValue == problem.getResults()) {
                     //Log.d("Success", "Happy")
                     tracker.recalculateScore();
-                    TextView tvs = (TextView) findViewById(R.id.score);
+                    TextView tvs = (TextView) findViewById(R.id.infScore);
                     number++;;
                     displayProblem();
 

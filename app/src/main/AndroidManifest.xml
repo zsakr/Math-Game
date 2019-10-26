@@ -12,6 +12,7 @@
         <activity android:name=".ResultsPage"></activity>
         <activity android:name=".TimedGame" />
         <activity android:name=".FixedGame" />
+        <activity android:name=".InfiniteMode" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
