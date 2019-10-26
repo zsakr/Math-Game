@@ -8,19 +8,19 @@ import java.util.Random;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class FixedGame extends AppCompatActivity {
-    private GenerateProblem problem = new GenerateProblem(0, 10);
+    private GenerateProblem problem = new GenerateProblem(1, 10);
     private NumTrack tracker = new NumTrack();
     private int numQues = 20;
     private int number = 1;
-
-
 
     private void clearDisplay(){
         TextView tv1 = (TextView) findViewById(R.id.textView);
@@ -54,6 +54,7 @@ public class FixedGame extends AppCompatActivity {
     }
 
     private void buttonClick(){
+
         ImageButton exitButton = (ImageButton) findViewById(R.id.imageButton);
         exitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,15 +77,23 @@ public class FixedGame extends AppCompatActivity {
                     TextView tvs = (TextView) findViewById(R.id.score);
                     number++;;
                     displayProblem();
-
                     tvs.setText(tracker.getScore()+"");
+
                 } else {
                     //Log.d("Fail", "Sad");
                     tracker.resetStreak();
                 }
+                StreakDisplayer();
                 ed.setText("");
             }
         });
+    }
+
+    private void StreakDisplayer(){
+        ImageView streak = findViewById(R.id.fixedStreak);
+        StreakDisplayer streakDisp = new StreakDisplayer(streak);
+        streakDisp.setStreak(tracker.getStreaks());
+        streakDisp.dispStreak();
     }
 
     private void checkEnd(){
