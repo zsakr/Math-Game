@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class InfiniteMode extends AppCompatActivity {
@@ -81,11 +82,17 @@ public class InfiniteMode extends AppCompatActivity {
                     startActivity(startint);
                 }
                 ed.setText("");
+                StreakDisplay();
             }
         });
     }
 
-
+    private void StreakDisplay(){
+        ImageView streak = (ImageView) findViewById(R.id.infinityStreak);
+        StreakDisplayer sdisplay = new StreakDisplayer(streak);
+        sdisplay.setStreak(tracker.getStreaks());
+        sdisplay.dispStreak();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
