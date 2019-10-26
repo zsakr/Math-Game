@@ -12,6 +12,9 @@ public class TimedGame extends AppCompatActivity {
     protected int counter;
     protected final int MAXTIME = 5000;    // max time in millis
     protected final int SECOND = 1000;      // sec is 1000 millis
+    private NumTrack tracker = new NumTrack();
+    private int numCorrect = 0;
+    private GenerateProblem prob = new GenerateProblem(0, 10);
 
 
     @Override
@@ -41,8 +44,9 @@ public class TimedGame extends AppCompatActivity {
             @Override
             public void onFinish(){
                 timerText.setText("Done");
-                Intent startint = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(startint);
+                Intent startint = new Intent(getApplicationContext(), ResultsPage.class);
+                startint.putExtra("Score", tracker.getScore()+"");
+                startint.putExtra("Time", tracker.getTime()+"");
             }
 
 
