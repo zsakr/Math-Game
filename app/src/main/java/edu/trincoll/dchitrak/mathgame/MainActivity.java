@@ -38,5 +38,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        /* this button is for the infinte mode setup */
+        Button infinitePress = (Button) findViewById(R.id.infinityButton);
+        infinitePress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent startint = new Intent(getApplicationContext(), TimedGame.class);
+                //startint.putExtra("com.example.twobutton.SOMETHING", "");
+                startActivity(startint);
+            }
+        });
+
+
     }
 }
