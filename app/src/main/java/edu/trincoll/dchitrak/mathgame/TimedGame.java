@@ -39,7 +39,7 @@ public class TimedGame extends AppCompatActivity {
 
 
         //init vars and screen
-//        prob.makeProblem();
+        prob.makeProblem();
 //        num1.setText(prob.getNum1());
 //        num2.setText(prob.getNum2());
 //        op.setText(prob.getOp());
