@@ -35,7 +35,7 @@ public class TimedGame extends AppCompatActivity {
 
             @Override
             public void onFinish(){
-                timerText.setText("Minor change");
+                timerText.setText("Done");
                 Intent startint = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(startint);
             }
