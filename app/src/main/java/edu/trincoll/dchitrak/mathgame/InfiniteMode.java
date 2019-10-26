@@ -77,7 +77,10 @@ public class InfiniteMode extends AppCompatActivity {
                     tvs.setText(tracker.getScore()+"");
                 } else {
                     //Log.d("Fail", "Sad");
-                    tracker.resetStreak();
+                    Intent startint = new Intent(getApplicationContext(), ResultsPage.class);
+                    startint.putExtra("Score", tracker.getScore()+"");
+                    startint.putExtra("Time", tracker.getTime()+"");
+                    startActivity(startint);
                 }
                 ed.setText("");
             }
