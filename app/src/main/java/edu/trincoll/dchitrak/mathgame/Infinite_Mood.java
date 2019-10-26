@@ -9,6 +9,6 @@ public class Infinite_Mood extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_infinite__mood);
+        setContentView(R.layout.activity_infinite_mode);
     }
 }
