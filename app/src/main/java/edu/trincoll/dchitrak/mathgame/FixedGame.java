@@ -35,7 +35,7 @@ public class FixedGame extends AppCompatActivity {
 
     private void displayProblem(){
 
-        problem.genarateParam();
+        problem.makeProblem();
         TextView tv1 = (TextView) findViewById(R.id.textView);
         TextView tv2 = (TextView) findViewById(R.id.textView2);
         TextView tv3 = (TextView) findViewById(R.id.qsLeft);

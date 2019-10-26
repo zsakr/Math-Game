@@ -1,12 +1,17 @@
 package edu.trincoll.dchitrak.mathgame;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class TimedGame extends AppCompatActivity {
 
-    /*
     protected int counter = 0;
     protected final int MAXTIME = 5000;    // max time in millis
     protected final int SECOND = 1000;      // sec is 1000 millis
@@ -15,18 +20,6 @@ public class TimedGame extends AppCompatActivity {
     private NumTrack tracker = new NumTrack();
     private GenerateProblem prob = new GenerateProblem(1, 10);
 
-    // set up page
-    private TextView timerText = findViewById(R.id.countdown);
-
-
-
-    // set up layout for problem
-    private TextView num1 = (TextView) findViewById(R.id.num1);
-    private TextView num2 = (TextView) findViewById(R.id.num2);
-    private TextView op = (TextView) findViewById(R.id.operator);
-    private EditText input = (EditText) findViewById(R.id.guessInput);
-    private int realAnswer = -999;
-*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,13 +27,23 @@ public class TimedGame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timed_game);
 
-/*        //init vars and screen
-        counter = 0;
-        prob.genarateParam();
-        num1.setText(prob.getNum1());
-        num2.setText(prob.getNum2());
-        op.setText(prob.getOp());
-        realAnswer = prob.getResults();
+
+        final TextView timerText = findViewById(R.id.countdown);
+
+        // set up layout for problem
+        final TextView num1 = findViewById(R.id.num1);
+        final TextView num2 =  findViewById(R.id.num2);
+        final TextView op =  findViewById(R.id.operator);
+        EditText input = findViewById(R.id.guessInput);
+        //int realAnswer = -999;
+
+
+        //init vars and screen
+//        prob.makeProblem();
+//        num1.setText(prob.getNum1());
+//        num2.setText(prob.getNum2());
+//        op.setText(prob.getOp());
+//        //realAnswer = prob.getResults();
 
 
         // create and display display a timer
@@ -62,21 +65,22 @@ public class TimedGame extends AppCompatActivity {
             }
 
 
-        }.start(); */
+        }.start();
 
 
        //set up exit button, which returns to home page
-/*        ImageButton exit = (ImageButton) findViewById(R.id.exitButton);
-        exit.setOnClickListener(new View.OnClickListener() {
+       ImageButton exit = (ImageButton) findViewById(R.id.exitButton);
+
+       exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //timer.cancel();
+                timer.cancel();
                 Intent startint = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(startint);
             }
         });
 
-       // set up submit button
+/*       // set up submit button
         Button submitButton = (Button) findViewById(R.id.submitButton);
 
        submitButton.setOnClickListener(new View.OnClickListener() {

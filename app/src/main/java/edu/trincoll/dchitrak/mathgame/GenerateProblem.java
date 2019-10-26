@@ -17,18 +17,18 @@ public class GenerateProblem {
         this.min = min;
         this.max = max;
     }
+//
+//    public GenerateProblem(){
+//        this.min = 1;
+//        this.max = 10;
+//    }
+//
+//    public GenerateProblem(int max){
+//        this.min = 1;
+//        this.max = max;
+//    }
 
-    public GenerateProblem(){
-        this.min = 0;
-        this.max = 10;
-    }
-
-    public GenerateProblem(int max){
-        this.min = 0;
-        this.max = max;
-    }
-
-    public void genarateParam(){
+    public void makeProblem(){
         num1 = rand.nextInt(max-min) + min;
         num2 = rand.nextInt(max-min) + min;
         opNum = rand.nextInt(4);

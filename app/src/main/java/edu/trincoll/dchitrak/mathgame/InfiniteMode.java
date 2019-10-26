@@ -1,7 +1,5 @@
 package edu.trincoll.dchitrak.mathgame;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +8,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class InfiniteMode extends AppCompatActivity {
 
@@ -34,7 +34,7 @@ public class InfiniteMode extends AppCompatActivity {
 
     private void displayProblem(){
 
-        problem.genarateParam();
+        problem.makeProblem();
         TextView tv1 = (TextView) findViewById(R.id.infNum1);
         TextView tv2 = (TextView) findViewById(R.id.infNum2);
         TextView tv3 = (TextView) findViewById(R.id.infQs);
