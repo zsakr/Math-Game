@@ -39,8 +39,8 @@
 
     <EditText
         android:id="@+id/editText4"
-        android:layout_width="120dp"
-        android:layout_height="80dp"
+        android:layout_width="167dp"
+        android:layout_height="74dp"
         android:layout_gravity="center_vertical"
         android:layout_marginStart="150dp"
         android:layout_marginLeft="120dp"
@@ -55,10 +55,10 @@
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintHorizontal_bias="0.892"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.571" />
+        app:layout_constraintVertical_bias="0.561" />
 
     <TextView
         android:id="@+id/textView3"
@@ -99,6 +99,7 @@
         android:layout_marginRight="120dp"
         android:text=""
         android:textSize="35sp"
+        app:fontFamily="casual"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
