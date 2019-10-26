@@ -81,6 +81,7 @@ public class FixedGame extends AppCompatActivity {
                     tracker.resetStreak();
                 }
                 ed.setText("");
+                StreakDisplay();
             }
         });
     }
