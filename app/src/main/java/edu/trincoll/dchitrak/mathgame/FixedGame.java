@@ -15,15 +15,11 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class FixedGame extends AppCompatActivity {
-    Random rand = new Random();
-    int number = 1;
-    int realAnswer;
-    int numQues = 20;
-    NumTrack tracker = new NumTrack();
+    private GenerateProblem problem = new GenerateProblem(11, 24);
+    private NumTrack tracker = new NumTrack();
+    private int numQues = 20;
+    private int number = 1;
 
-    private int generateNum(int max){
-        return rand.nextInt(max);
-    }
 
 
     private void clearDisplay(){
@@ -32,49 +28,26 @@ public class FixedGame extends AppCompatActivity {
         TextView tv3 = (TextView) findViewById(R.id.qsLeft);
         TextView tv4 = (TextView) findViewById(R.id.textView3);
 
-        realAnswer = -9999999;
+        problem.setResults(-999999);
         tv1.setText("");
         tv2.setText("");
         tv3.setText("");
         tv4.setText("");
-
     }
 
     private void displayProblem(){
 
-        int num1;
-        int num2;
-
-        int opNum;
-
+        problem.genarateParam();
         TextView tv1 = (TextView) findViewById(R.id.textView);
         TextView tv2 = (TextView) findViewById(R.id.textView2);
         TextView tv3 = (TextView) findViewById(R.id.qsLeft);
         TextView tv4 = (TextView) findViewById(R.id.textView3);
 
-        num1 = generateNum(10);
-        num2 = generateNum(10);
 
-        opNum = generateNum(4);
-
-        if (opNum == 0){
-            tv4.setText("+");
-            realAnswer = num1+num2;
-        }else if(opNum == 1){
-            tv4.setText("-");
-            realAnswer = num1-num2;
-        }else if(opNum == 2){
-            tv4.setText("X");
-            realAnswer = num1*num2;
-        }else{
-            tv4.setText("/");
-            realAnswer = (num1%num2)+generateNum(20);
-            num1 = num2*realAnswer;
-        }
-
-        tv1.setText(num1+ "");
-        tv2.setText(num2+ "");
+        tv1.setText(problem.getNum1());
+        tv2.setText(problem.getNum2());
         tv3.setText(((numQues + 1) - number)+"");
+        tv4.setText(problem.getOp());
 
 
         checkEnd();
@@ -97,7 +70,7 @@ public class FixedGame extends AppCompatActivity {
             public void onClick(View view) {
                 String value = ed.getText().toString();
                 int finalValue = Integer.parseInt(value);
-                if (finalValue == realAnswer) {
+                if (finalValue == problem.getResults()) {
                     //Log.d("Success", "Happy")
                     tracker.recalculateScore();
                     TextView tvs = (TextView) findViewById(R.id.score);

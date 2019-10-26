@@ -49,6 +49,10 @@ public class GenerateProblem {
         }
     }
 
+    public void setResults(int num){
+        results = num;
+    }
+
     public int getNum1(){
         return num1;
     }
