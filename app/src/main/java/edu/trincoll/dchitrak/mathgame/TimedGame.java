@@ -22,10 +22,12 @@ public class TimedGame extends AppCompatActivity {
 
         /* init vars for timer display */
         counter = 0;
-        final TextView timerText = findViewById(R.id.countdownText);
+        final TextView timerText = findViewById(R.id.countdown);
 
-        TextView tv1 = (TextView) findViewById(R.id.textView);
-        TextView tv2 = (TextView) findViewById(R.id.textView2);
+        /* init vars for displaying the problem */
+        TextView num1 = (TextView) findViewById(R.id.num1);
+        TextView num2 = (TextView) findViewById(R.id.num2);
+
 
         // display a timer
         new CountDownTimer(MAXTIME, SECOND){
