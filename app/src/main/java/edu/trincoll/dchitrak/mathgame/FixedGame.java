@@ -44,8 +44,8 @@ public class FixedGame extends AppCompatActivity {
         TextView tv4 = (TextView) findViewById(R.id.textView3);
 
 
-        tv1.setText(problem.getNum1());
-        tv2.setText(problem.getNum2());
+        tv1.setText(problem.getNum1()+"");
+        tv2.setText(problem.getNum2()+"");
         tv3.setText(((numQues + 1) - number)+"");
         tv4.setText(problem.getOp());
 
