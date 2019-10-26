@@ -1,10 +1,5 @@
 package edu.trincoll.dchitrak.mathgame;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.Random;
-
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -13,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class FixedGame extends AppCompatActivity {
     private GenerateProblem problem = new GenerateProblem(0, 10);
@@ -54,7 +51,7 @@ public class FixedGame extends AppCompatActivity {
     }
 
     private void buttonClick(){
-        ImageButton exitButton = (ImageButton) findViewById(R.id.imageButton);
+        ImageButton exitButton = (ImageButton) findViewById(R.id.exitButton);
         exitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
