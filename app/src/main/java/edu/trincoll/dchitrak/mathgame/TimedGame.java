@@ -24,6 +24,9 @@ public class TimedGame extends AppCompatActivity {
         counter = 0;
         final TextView timerText = findViewById(R.id.countdownText);
 
+        TextView tv1 = (TextView) findViewById(R.id.textView);
+        TextView tv2 = (TextView) findViewById(R.id.textView2);
+
         // display a timer
         new CountDownTimer(MAXTIME, SECOND){
 

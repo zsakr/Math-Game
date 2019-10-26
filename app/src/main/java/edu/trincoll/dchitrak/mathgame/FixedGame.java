@@ -29,7 +29,7 @@ public class FixedGame extends AppCompatActivity {
     private void clearDisplay(){
         TextView tv1 = (TextView) findViewById(R.id.textView);
         TextView tv2 = (TextView) findViewById(R.id.textView2);
-        TextView tv3 = (TextView) findViewById(R.id.textView4);
+        TextView tv3 = (TextView) findViewById(R.id.qsLeft);
         TextView tv4 = (TextView) findViewById(R.id.textView3);
 
         realAnswer = -9999999;
@@ -49,7 +49,7 @@ public class FixedGame extends AppCompatActivity {
 
         TextView tv1 = (TextView) findViewById(R.id.textView);
         TextView tv2 = (TextView) findViewById(R.id.textView2);
-        TextView tv3 = (TextView) findViewById(R.id.textView4);
+        TextView tv3 = (TextView) findViewById(R.id.qsLeft);
         TextView tv4 = (TextView) findViewById(R.id.textView3);
 
         num1 = generateNum(10);
