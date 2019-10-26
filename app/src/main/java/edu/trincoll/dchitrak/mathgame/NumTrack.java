@@ -1,7 +1,5 @@
 package edu.trincoll.dchitrak.mathgame;
-
 import java.io.*;
-
 
 public class NumTrack {
     private long starttime;
@@ -50,7 +48,38 @@ public class NumTrack {
                 System.out.println("Exception Occurred:");
                 e.printStackTrace();
             }
+
+
+            Writer writer = null;
+
+            int lineNumber;
+            try {
+                writer =new BufferedWriter(new OutputStreamWriter(new FileOutputStream("leaderboard.txt"), "utf-8"));
+
+
+                for (lineNumber = 1; lineNumber < 11; lineNumber++) {
+                    writer.write("");
+                    writer.write("\n");
+                }
+                for (lineNumber = 1; lineNumber < 11; lineNumber++) {
+                    writer.write("0");
+                    writer.write("\n");
+                }
+
+                writer.flush();
+
+            } catch (IOException ex) {
+
+            } finally {
+                try {writer.close();} catch (Exception ex) {
+
+                }
+            }
+
+
+
         }
+
 
     }
 
@@ -113,8 +142,144 @@ public class NumTrack {
 
 
 
+    public void checkAndsetBoard(String Pname, int score) {
+        String scoreS = score+"";
+        String text = "";
+        String player[] = new String[12];
+        String playerScore[] = new String[12];
+        int lineNumber;
+        try {
+            FileReader readfile = new FileReader("leaderboard.txt");
+            BufferedReader readbuffer = new BufferedReader(readfile);
+            for (lineNumber = 1; lineNumber <= 10; lineNumber++) {
+                text = readbuffer.readLine();
+
+                player[lineNumber] = text;
+            }
+            for (lineNumber = 11; lineNumber <= 20; lineNumber++) {
+                text = readbuffer.readLine();
+
+                playerScore[lineNumber-10] = text;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
+        player[11] = Pname;
+        playerScore[11] = scoreS;
+
+
+        int i;
+        boolean sorted = false;
+        int temp;
+        String tempS;
+        while (!sorted) {
+            sorted = true;
+            for(i = 1; i < 11; i++) {
+                if(Integer.parseInt(playerScore[i]) > Integer.parseInt(playerScore[i+1])) {
+                    temp = Integer.parseInt(playerScore[i]);
+                    tempS = player[i];
+                    playerScore[i] = playerScore[i+1];
+                    player[i] = player[i+1];
+                    playerScore[i+1] = temp+"";
+                    player[i+1] = tempS;
+                    sorted = false;
+                }
+            }
+        }
+
+
+/**
+ for (i = 1; i < 12; i++) {
+ System.out.println(player[i]);
+ }
+ for (i = 1; i < 12; i++) {
+ System.out.println(playerScore[i]);
+ }
+ */
+
+        Writer writer = null;
+
+        try {
+            writer =new BufferedWriter(new OutputStreamWriter(new FileOutputStream("leaderboard.txt"), "utf-8"));
+
+
+            for (lineNumber = 2; lineNumber < 12; lineNumber++) {
+                writer.write(player[lineNumber]);
+                writer.write("\n");
+            }
+            for (lineNumber = 2; lineNumber < 12; lineNumber++) {
+                writer.write(playerScore[lineNumber]);
+                writer.write("\n");
+
+            }
+
+            writer.flush();
+
+        } catch (IOException ex) {
+
+        } finally {
+            try {writer.close();} catch (Exception ex) {
+
+            }
+        }
+
+
+    }
+
+    public void OhSnap() {
+        Writer writer = null;
+
+        int lineNumber;
+        try {
+            writer =new BufferedWriter(new OutputStreamWriter(new FileOutputStream("leaderboard.txt"), "utf-8"));
+
+
+            for (lineNumber = 1; lineNumber < 11; lineNumber++) {
+                writer.write("");
+                writer.write("\n");
+            }
+            for (lineNumber = 1; lineNumber < 11; lineNumber++) {
+                writer.write("0");
+                writer.write("\n");
+            }
+
+            writer.flush();
+
+        } catch (IOException ex) {
+
+        } finally {
+            try {writer.close();} catch (Exception ex) {
+
+            }
+        }
+    }
+
+    public String[] getLeaderboardQ20() {
+        String text = "";
+        String returnArr[] = new String[21];
+        int lineNumber;
+        try {
+            FileReader readfile = new FileReader("leaderboard.txt");
+            BufferedReader readbuffer = new BufferedReader(readfile);
+            for (lineNumber = 20; lineNumber >= 1; lineNumber--) {
+                text = readbuffer.readLine();
+                returnArr[lineNumber] = text;
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        for (int i = 1; i < 20; i++) {
+            System.out.println(returnArr[i]);
+        }
+
+        return returnArr;
+
+
+    }
 
 
 
