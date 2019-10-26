@@ -3,7 +3,6 @@ package edu.trincoll.dchitrak.mathgame;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,15 +14,33 @@ import androidx.appcompat.app.AppCompatActivity;
 public class TimedGame extends AppCompatActivity {
 
     protected int counter = 0;
-    protected final int MAXTIME = 5000;    // max time in millis
+    protected final int MAXTIME = 30000;    // max time in millis
     protected final int SECOND = 1000;      // sec is 1000 millis
     private int numCorrect = 0;
 
     private NumTrack tracker = new NumTrack();
     private GenerateProblem prob = new GenerateProblem(1, 10);
 
+    protected void clearInputText() {
+
+        EditText inputText = findViewById(R.id.guessInput);
+        inputText.setText("");
+
+    }
+
 
     protected void displayProblem() {
+
+        // set up layout for problem
+        TextView num1Text = findViewById(R.id.num1);
+        TextView num2Text =  findViewById(R.id.num2);
+        TextView opText =  findViewById(R.id.operator);
+
+        //init vars and screen
+        prob.makeProblem();
+        num1Text.setText(prob.getNum1()+"");
+        num2Text.setText(prob.getNum2()+"");
+        opText.setText(prob.getOp()+"");
 
     }
 
@@ -34,20 +51,10 @@ public class TimedGame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timed_game);
 
-
+        final EditText inputText = findViewById(R.id.guessInput);
         final TextView timerText = findViewById(R.id.countdown);
 
-        // set up layout for problem
-        final TextView num1Text = findViewById(R.id.num1);
-        final TextView num2Text =  findViewById(R.id.num2);
-        final TextView opText =  findViewById(R.id.operator);
-        final EditText inputText = findViewById(R.id.guessInput);
-
-        //init vars and screen
-        prob.makeProblem();
-        num1Text.setText(prob.getNum1()+"");
-        num2Text.setText(prob.getNum2()+"");
-        opText.setText(prob.getOp()+"");
+        displayProblem();
 
 
         // create and display display a timer
@@ -95,12 +102,12 @@ public class TimedGame extends AppCompatActivity {
                 int guess = Integer.parseInt(guessString);
 
                 if (guess == prob.getResults()) {  // problem answered correctly
-
                     numCorrect++;
-                    Log.d("Answer", "Correct");
-                } else {
-                    Log.d("Answer", "Error");
+                    displayProblem();           // change problem only if answered correctly
                 }
+
+                clearInputText();
+
             }
         });
 
