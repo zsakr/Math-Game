@@ -35,7 +35,7 @@ public class TimedGame extends AppCompatActivity {
         final TextView num2Text =  findViewById(R.id.num2);
         final TextView opText =  findViewById(R.id.operator);
         EditText inputText = findViewById(R.id.guessInput);
-        //int realAnswer = -999;
+        int realAnswer = -999;
 
 
         //init vars and screen
@@ -43,7 +43,7 @@ public class TimedGame extends AppCompatActivity {
         num1Text.setText(prob.getNum1()+"");
         num2Text.setText(prob.getNum2()+"");
         opText.setText(prob.getOp()+"");
-        //realAnswer = prob.getResults();
+        realAnswer = prob.getResults();
 
 
         // create and display display a timer
