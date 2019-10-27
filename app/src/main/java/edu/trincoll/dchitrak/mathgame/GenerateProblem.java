@@ -17,16 +17,16 @@ public class GenerateProblem{
         this.min = min;
         this.max = max;
     }
-//
-//    public GenerateProblem(){
-//        this.min = 1; \\ HI
-//        this.max = 10;
-//    }
-//
-//    public GenerateProblem(int max){
-//        this.min = 1;
-//        this.max = max;
-//    }
+
+    public GenerateProblem(){
+        this.min = 1;
+        this.max = 10;
+    }
+
+    public GenerateProblem(int max){
+        this.min = 1;
+        this.max = max;
+    }
 
     public void makeProblem(){
         num1 = rand.nextInt(max-min) + min;

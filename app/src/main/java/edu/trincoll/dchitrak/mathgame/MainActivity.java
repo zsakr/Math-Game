@@ -9,8 +9,11 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
 public class MainActivity extends AppCompatActivity {
     boolean toggle = true;
+
+    static Diff diffval = Diff.EASY;
 
     private void menuSelection(){
         /* this button is for the fixed game setup */
@@ -90,6 +93,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         menuSelection();
         rocketAnimate();

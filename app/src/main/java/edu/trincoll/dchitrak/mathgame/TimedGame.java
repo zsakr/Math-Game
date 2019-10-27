@@ -16,7 +16,6 @@ public class TimedGame extends AppCompatActivity {
     protected int counter = 0;
     protected final int MAXTIME = 60000;    // max time in millis
     protected final int SECOND = 1000;      // sec is 1000 millis
-    private int numCorrect = 0;
 
     private final NumTrack tracker = new NumTrack();
     private GenerateProblem problem;
@@ -26,11 +25,11 @@ public class TimedGame extends AppCompatActivity {
     private void chooseType(){
         String Game = getIntent().getExtras().getString("type");
         if(Game.equals("binary")){
-            problem= new Binary(0, 8);
+            problem= new Binary();
         }else if(Game.equals("dec")){
-            problem= new Decimal(1, 10);
+            problem= new Decimal();
         }else if(Game.equals("hex")){
-            problem = new Hex(1, 16);
+            problem = new Hex();
         }
     }
 
@@ -126,7 +125,6 @@ public class TimedGame extends AppCompatActivity {
                 String value = inputText.getText().toString();
 
                 if (value.equals(problem.getResults())) {  // problem answered correctly
-                    numCorrect++;
                     tracker.recalculateScore();
                     displayProblem();           // change problem only if answered correctly
                 } else {

@@ -5,6 +5,11 @@ public class Hex extends GenerateProblem {
         super(min, max);
     }
 
+    public Hex(){
+
+        super();
+    }
+
 
     public void makeProblem(){
         super.makeProblem();

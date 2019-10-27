@@ -7,7 +7,18 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+enum Diff{
+    EASY,
+    MEDIUM,
+    HARD
+}
+
+
+
 public class Difficulty extends AppCompatActivity {
+
+
+//    static difficultyValue diffVal = new difficultyValue();
 
     //set up exit button, which returns to home page
     private void onExitButtClick() {
