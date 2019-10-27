@@ -21,6 +21,20 @@
         app:srcCompat="@drawable/exit" />
 
     <TextView
+        android:id="@+id/dispScore"
+        android:layout_width="174dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.486" />
+
+    <TextView
         android:id="@+id/dispScoreT"
         android:layout_width="108dp"
         android:layout_height="52dp"
@@ -33,7 +47,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.372" />
+        app:layout_constraintVertical_bias="0.491" />
 
     <TextView
         android:id="@+id/dispTime"
@@ -47,7 +61,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.488" />
+        app:layout_constraintVertical_bias="0.606" />
 
     <TextView
         android:id="@+id/dispTimeT"
@@ -62,21 +76,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.489" />
-
-    <TextView
-        android:id="@+id/dispScore"
-        android:layout_width="174dp"
-        android:layout_height="47dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
-        android:textSize="35sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.369" />
+        app:layout_constraintVertical_bias="0.608" />
 
     <TextView
         android:id="@+id/finalMessage"
@@ -90,5 +90,5 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.176" />
+        app:layout_constraintVertical_bias="0.281" />
 </androidx.constraintlayout.widget.ConstraintLayout>
