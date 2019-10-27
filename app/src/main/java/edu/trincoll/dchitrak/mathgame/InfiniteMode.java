@@ -183,4 +183,11 @@ public class InfiniteMode extends AppCompatActivity {
         soundPool.release();
         soundPool = null;
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent startint = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(startint);
+    }
 }
