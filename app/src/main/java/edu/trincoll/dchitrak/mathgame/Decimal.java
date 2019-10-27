@@ -5,6 +5,26 @@ public class Decimal extends GenerateProblem {
         super(min, max);
     }
 
+    public void makeProblem(){
+
+        opNum = rand.nextInt(4);
+
+        if (opNum == 0){
+            op = "+";
+            results = num1+num2;
+        }else if(opNum == 1){
+            op = "-";
+            results = num1-num2;
+        }else if(opNum == 3){
+            op = "x";
+            results = num1*num2;
+        }else{
+            op = "/";
+            results = (num1%num2)+rand.nextInt((max-min)*2);
+            num1 = num2*results;
+        }
+    }
+
 
 
 }
