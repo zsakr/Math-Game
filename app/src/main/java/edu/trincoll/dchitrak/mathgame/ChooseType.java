@@ -101,14 +101,13 @@ public class ChooseType extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_type);
 
-<<<<<<< HEAD
+
         String gameTypeTag = getIntent().getExtras().getString("gameType");
         Log.d("GameType", gameTypeTag);
         finalType = convertTag(gameTypeTag);
 
 
-=======
->>>>>>> 6668e12bfb94342d183f0a869f912141fac63e45
+
 
         String gameType = getIntent().getExtras().getString("GameType");
         Log.d("GameType", "Hi");
