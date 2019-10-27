@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LeaderboardInput"></activity>
+        <activity android:name=".TopScores"></activity>
+        <activity android:name=".LeaderboardInput" />
         <activity android:name=".ResultsPage" />
         <activity android:name=".TimedGame" />
         <activity android:name=".FixedGame" />
