@@ -17,7 +17,7 @@ public class Decimal extends GenerateProblem {
         }else if(opNum == 1){
             op = "-";
             results = num1-num2;
-        }else if(opNum == 3){
+        }else if(opNum == 2){
             op = "x";
             results = num1*num2;
         }else{
