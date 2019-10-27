@@ -2,48 +2,54 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/timeLabel"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cardview_dark_background"
-    android:theme="@android:style/Theme.Material.NoActionBar"
+    android:background="#FFFFFF"
     tools:context=".ResultsPage">
 
     <TextView
         android:id="@+id/dispTime"
         android:layout_width="174dp"
         android:layout_height="47dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.619" />
+        app:layout_constraintVertical_bias="0.445" />
 
     <TextView
         android:id="@+id/dispTimeT"
-        android:layout_width="174dp"
-        android:layout_height="47dp"
+        android:layout_width="100dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="Time:"
         android:textSize="35sp"
-        android:text="Time"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.516" />
+        app:layout_constraintVertical_bias="0.447" />
 
     <TextView
         android:id="@+id/dispScore"
         android:layout_width="174dp"
         android:layout_height="47dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.385" />
+        app:layout_constraintVertical_bias="0.327" />
 
     <ImageButton
         android:id="@+id/imageButton2"
@@ -59,14 +65,16 @@
 
     <TextView
         android:id="@+id/dispScoreT"
-        android:layout_width="174dp"
-        android:layout_height="47dp"
-        android:text="Score"
+        android:layout_width="108dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="Score:"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.282" />
+        app:layout_constraintVertical_bias="0.32999998" />
 </androidx.constraintlayout.widget.ConstraintLayout>
