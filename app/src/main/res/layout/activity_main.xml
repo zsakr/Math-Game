@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:text="Blast Math!"
         android:textColor="#F0EDED"
-        android:textSize="40sp"
+        android:textSize="60sp"
         android:textStyle="bold"
         app:fontFamily="@font/architects_daughter"
         app:layout_constraintBottom_toBottomOf="parent"
