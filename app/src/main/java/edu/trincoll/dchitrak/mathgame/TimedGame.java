@@ -62,6 +62,7 @@ public class TimedGame extends AppCompatActivity {
 
         final EditText inputText = findViewById(R.id.guessInput);
         final TextView timerText = findViewById(R.id.countdown);
+        final TextView scoreText = findViewById(R.id.score);
 
         displayProblem();
 
@@ -120,8 +121,9 @@ public class TimedGame extends AppCompatActivity {
                     tracker.resetStreak();
                 }
 
+                scoreText.setText("");
                 clearInputText();
-                //displayStreak();
+                scoreText.setText((tracker.getScore()+""));
 
             }
         });
