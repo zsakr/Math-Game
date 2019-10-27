@@ -37,11 +37,12 @@ public class Difficulty extends AppCompatActivity {
     //set up exit button, which returns to home page
     private void onEasyButtClick() {
 
-        ImageButton exit = (ImageButton) findViewById(R.id.exitButton);
+        ImageButton easy = (ImageButton) findViewById(R.id.easyButt);
 
-        exit.setOnClickListener(new View.OnClickListener() {
+        easy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                
                 Intent startint = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(startint);
             }
