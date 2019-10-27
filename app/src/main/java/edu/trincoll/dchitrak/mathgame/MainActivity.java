@@ -7,12 +7,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import android.media.AudioAttributes;
+import android.media.AudioManager;
+import android.media.SoundPool;
+import android.os.Build;
+import android.os.Bundle;
+import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 
 public class MainActivity extends AppCompatActivity {
     boolean toggle = true;
 
+    public SoundPool soundPool;
+    public int SDifficulty, SEnd, SRight, SWrong;
 
     private void menuSelection(){
         /* this button is for the fixed game setup */
@@ -85,6 +94,26 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            AudioAttributes audioAttributes = new AudioAttributes.Builder()
+                    .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
+                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                    .build();
+
+            soundPool = new SoundPool.Builder()
+                    .setMaxStreams(4)
+                    .setAudioAttributes(audioAttributes)
+                    .build();
+        } else {
+            soundPool = new SoundPool(6, AudioManager.STREAM_MUSIC, 0);
+        }
+
+        SDifficulty = soundPool.load(this, R.raw.difficulty, 1);
+        SEnd = soundPool.load(this, R.raw.end, 1);
+        SRight = soundPool.load(this, R.raw.right, 1);
+        SWrong = soundPool.load(this, R.raw.wrong, 1);
+
 
 
 
