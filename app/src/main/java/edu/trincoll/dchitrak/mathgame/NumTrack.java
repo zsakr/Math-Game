@@ -1,4 +1,6 @@
 package edu.trincoll.dchitrak.mathgame;
+import android.util.Log;
+
 import java.io.*;
 
 public class NumTrack {

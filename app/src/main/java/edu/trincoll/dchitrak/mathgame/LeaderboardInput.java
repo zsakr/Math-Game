@@ -23,7 +23,7 @@ public class LeaderboardInput extends AppCompatActivity {
             public void onClick(View view) {
                 EditText name = (EditText) findViewById(R.id.nameInput);
                 String NameString = name.getText().toString();
-                if(!NameString.equals("")) {
+                if(!NameString.isEmpty()) {
                     String Score = getIntent().getExtras().getString("Score");
                     String Time = getIntent().getExtras().getString("Time");
                     String Game = getIntent().getExtras().getString("Game");
