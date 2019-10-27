@@ -19,7 +19,7 @@ public class GenerateProblem{
     }
 //
 //    public GenerateProblem(){
-//        this.min = 1;
+//        this.min = 1; \\ HI
 //        this.max = 10;
 //    }
 //
