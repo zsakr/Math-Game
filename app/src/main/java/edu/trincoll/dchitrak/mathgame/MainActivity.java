@@ -2,12 +2,10 @@ package edu.trincoll.dchitrak.mathgame;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.SystemClock;
+import android.util.Log;
 import android.view.View;
-import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,8 +18,9 @@ public class MainActivity extends AppCompatActivity {
         press.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startint = new Intent(getApplicationContext(), FixedGame.class);
-                //startint.putExtra("com.example.twobutton.SOMETHING", "");
+                Intent startint = new Intent(getApplicationContext(), ChooseType.class);
+                Log.d("class", "went to the Choose type class!!!");
+                startint.putExtra("gameType", "FixedGame.class");
                 startActivity(startint);
             }
         });
@@ -32,20 +31,20 @@ public class MainActivity extends AppCompatActivity {
         timePress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startint = new Intent(getApplicationContext(), TimedGame.class);
-                //startint.putExtra("com.example.twobutton.SOMETHING", "");
+                Intent startint = new Intent(getApplicationContext(), ChooseType.class);
+                startint.putExtra("gameType", "TimedGame.class");
                 startActivity(startint);
             }
         });
 
 
-        /* this button is for the infinte mode setup */
+        /* this button is for the infinite mode setup */
         Button infinitePress = (Button) findViewById(R.id.infinityButton);
         infinitePress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startint = new Intent(getApplicationContext(), InfiniteMode.class);
-                //startint.putExtra("com.example.twobutton.SOMETHING", "");
+                Intent startint = new Intent(getApplicationContext(), ChooseType.class);
+                startint.putExtra("gameType", "InfinteMode.class");
                 startActivity(startint);
             }
         });
