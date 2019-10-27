@@ -1,6 +1,10 @@
 package edu.trincoll.dchitrak.mathgame;
 
 import android.content.Intent;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
+import android.media.SoundPool;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,6 +23,8 @@ public class ChooseType extends AppCompatActivity {
     }
 
 
+    public SoundPool soundPool;
+    public int diff, boom, end, fix, right, wrong;
 
     GameType game;
     String difficulty;
@@ -29,6 +35,7 @@ public class ChooseType extends AppCompatActivity {
         exitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(diff, 1, 1, 0, 0, 1);
                 Intent startint = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(startint);
             }
@@ -42,6 +49,7 @@ public class ChooseType extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent startint = createIntent();
+                soundPool.play(diff, 1, 1, 0, 0, 1);
                 startint.putExtra("type", "dec");
                 startint.putExtra("difficulty", difficulty);
                 startActivity(startint);
@@ -56,6 +64,7 @@ public class ChooseType extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent startint = createIntent();
+                soundPool.play(diff, 1, 1, 0, 0, 1);
                 startint.putExtra("type", "binary");
                 startint.putExtra("difficulty", difficulty);
                 startActivity(startint);
@@ -70,6 +79,7 @@ public class ChooseType extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent startint = createIntent();
+                soundPool.play(diff, 1, 1, 0, 0, 1);
                 startint.putExtra("type", "hex");
                 startint.putExtra("difficulty", difficulty);
                 startActivity(startint);
@@ -111,6 +121,26 @@ public class ChooseType extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_type);
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            AudioAttributes audioAttributes = new AudioAttributes.Builder()
+                    .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
+                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                    .build();
+
+            soundPool = new SoundPool.Builder()
+                    .setMaxStreams(6)
+                    .setAudioAttributes(audioAttributes)
+                    .build();
+        } else {
+            soundPool = new SoundPool(6, AudioManager.STREAM_MUSIC, 0);
+        }
+
+        diff = soundPool.load(this, R.raw.difficulty, 1);
+        boom = soundPool.load(this, R.raw.boom, 1);
+        end = soundPool.load(this, R.raw.end, 1);
+        fix = soundPool.load(this, R.raw.fix, 1);
+        right = soundPool.load(this, R.raw.right, 1);
+        wrong = soundPool.load(this, R.raw.wrong, 1);
 
         String gameTypeTag = getIntent().getExtras().getString("gameType");
         difficulty = getIntent().getExtras().getString("difficulty");
@@ -127,5 +157,10 @@ public class ChooseType extends AppCompatActivity {
         onExitClick();
     }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        soundPool.release();
+        soundPool = null;
+    }
 }
