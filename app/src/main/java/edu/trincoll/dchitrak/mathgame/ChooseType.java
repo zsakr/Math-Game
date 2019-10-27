@@ -18,6 +18,8 @@ public class ChooseType extends AppCompatActivity {
         SHIT
     }
 
+    GameType finalType;
+
     // when the exit button is clicked
     private void buttonClick() {
         ImageButton exitButton = (ImageButton) findViewById(R.id.exitButton);
@@ -36,7 +38,7 @@ public class ChooseType extends AppCompatActivity {
         decimalButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startint = new Intent(getApplicationContext(), FixedGame.class);
+                Intent startint = createIntent();
                 startActivity(startint);
             }
         });
@@ -48,7 +50,7 @@ public class ChooseType extends AppCompatActivity {
         binaryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startint = new Intent(getApplicationContext(), FixedGame.class);
+                Intent startint = createIntent();
                 startActivity(startint);
             }
         });
@@ -60,11 +62,25 @@ public class ChooseType extends AppCompatActivity {
         hexButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startint = new Intent(getApplicationContext(), FixedGame.class);
+                Intent startint = createIntent();
                 startActivity(startint);
             }
         });
     }
+
+    // creates the appropriate intent based on the game type enum
+    private Intent createIntent() {
+        if (finalType == GameType.FIXED) {
+            return new Intent(getApplicationContext(), FixedGame.class);
+        } else if (finalType ==  GameType.INFINITE) {
+            return new Intent(getApplicationContext(), InfiniteMode.class);
+        } else if (finalType == GameType.TIMED) {
+            return new Intent(getApplicationContext(), TimedGame.class);
+        }
+
+        return new Intent(getApplicationContext(), ResultsPage.class);
+    }
+
 
     // convert tag to an enum game type
     private GameType convertTag(String gameTypeTag) {
@@ -87,7 +103,7 @@ public class ChooseType extends AppCompatActivity {
 
         String gameTypeTag = getIntent().getExtras().getString("gameType");
         Log.d("GameType", gameTypeTag);
-        GameType type = convertTag(gameTypeTag);
+        finalType = convertTag(gameTypeTag);
 
 
 
