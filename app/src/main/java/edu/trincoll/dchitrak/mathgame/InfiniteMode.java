@@ -21,11 +21,11 @@ public class InfiniteMode extends AppCompatActivity {
     private void chooseType(){
         String Game = getIntent().getExtras().getString("type");
         if(Game.equals("binary")){
-            problem= new Binary(0, 8);
+            problem= new Binary();
         }else if(Game.equals("dec")){
-            problem= new Decimal(1, 10);
+            problem= new Decimal();
         }else if(Game.equals("hex")){
-            problem = new Hex(1, 16);
+            problem = new Hex();
         }
     }
 

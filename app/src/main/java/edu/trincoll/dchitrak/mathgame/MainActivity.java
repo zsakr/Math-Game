@@ -11,9 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class MainActivity extends AppCompatActivity {
-    static Diff diffval = Diff.EASY;
     boolean toggle = true;
-
 
 
     private void menuSelection(){
@@ -22,9 +20,9 @@ public class MainActivity extends AppCompatActivity {
         press.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startint = new Intent(getApplicationContext(), ChooseType.class);
-                Log.d("class", "went to the Choose type class!!!");
+                Intent startint = new Intent(getApplicationContext(), Difficulty.class);
                 startint.putExtra("gameType", "FixedGame.class");
+
                 startActivity(startint);
             }
         });
@@ -35,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         timePress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startint = new Intent(getApplicationContext(), ChooseType.class);
+                Intent startint = new Intent(getApplicationContext(), Difficulty.class);
                 startint.putExtra("gameType", "TimedGame.class");
                 startActivity(startint);
             }
@@ -79,14 +77,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-//        if (move) {
-//            animate.startAnimation(animation);  // start animation
-//
-//        }
-//
-//        if (!move) {
-//
-//        }
+
     }
 
 
