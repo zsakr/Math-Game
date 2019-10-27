@@ -1,5 +1,7 @@
 package edu.trincoll.dchitrak.mathgame;
 
+
+
 import android.content.Intent;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
@@ -15,9 +17,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     boolean toggle = true;
-
     public SoundPool soundPool;
-    public int SDifficulty, SEnd, SRight, SWrong;
+    public int diff, boom, end, fix, right, wrong;
+
 
     private void menuSelection(){
         /* this button is for the fixed game setup */
@@ -25,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         press.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                soundPool.play(SDifficulty,1,1,0,0, 2);
+                soundPool.play(diff, 1, 1, 0, 0, 1);
                 Intent startint = new Intent(getApplicationContext(), Difficulty.class);
                 startint.putExtra("gameType", "FixedGame.class");
 
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         timePress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                soundPool.play(SDifficulty,1,1,0,0, 2);
+                soundPool.play(diff, 1, 1, 0, 0, 1);
                 Intent startint = new Intent(getApplicationContext(), Difficulty.class);
                 startint.putExtra("gameType", "TimedGame.class");
                 startActivity(startint);
@@ -52,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
         infinitePress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(diff, 1, 1, 0, 0, 1);
 
-                soundPool.play(SDifficulty,1,1,0,0, 2);
                 Intent startint = new Intent(getApplicationContext(), Difficulty.class);
                 startint.putExtra("gameType", "InfiniteMode.class");
                 startActivity(startint);
@@ -74,10 +76,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (toggle){
+                    soundPool.play(boom, 1, 1, 0, 0, 1);
                 ImageView animate = findViewById(R.id.rocket);
                 animate.setImageResource(R.drawable.bomb_transparent);
                 toggle = !toggle;
             }else{
+                    soundPool.play(fix, 1, 1, 0, 0, 1);
                     ImageView animate = findViewById(R.id.rocket);
                     animate.setImageResource(R.drawable.rocket);
                     toggle = !toggle;
@@ -95,6 +99,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        menuSelection();
+        rocketAnimate();
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             AudioAttributes audioAttributes = new AudioAttributes.Builder()
                     .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
@@ -102,22 +109,26 @@ public class MainActivity extends AppCompatActivity {
                     .build();
 
             soundPool = new SoundPool.Builder()
-                    .setMaxStreams(4)
+                    .setMaxStreams(6)
                     .setAudioAttributes(audioAttributes)
                     .build();
         } else {
             soundPool = new SoundPool(6, AudioManager.STREAM_MUSIC, 0);
         }
 
-        SDifficulty = soundPool.load(this, R.raw.difficulty, 1);
-        SEnd = soundPool.load(this, R.raw.end, 1);
-        SRight = soundPool.load(this, R.raw.right, 1);
-        SWrong = soundPool.load(this, R.raw.wrong, 1);
+        diff = soundPool.load(this, R.raw.difficulty, 1);
+        boom = soundPool.load(this, R.raw.boom, 1);
+        end = soundPool.load(this, R.raw.end, 1);
+        fix = soundPool.load(this, R.raw.fix, 1);
+        right = soundPool.load(this, R.raw.right, 1);
+        wrong = soundPool.load(this, R.raw.wrong, 1);
+    }
 
-
-
-
-        menuSelection();
-        rocketAnimate();
-    }}
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        soundPool.release();
+        soundPool = null;
+    }
+}
 
