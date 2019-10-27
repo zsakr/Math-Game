@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">MathGame</string>
     <string name="Answer">Answer</string>
+    <string name="exits_screen">Exits Screen</string>
+    <string name="go">GO</string>
+    <string name="_0">0</string>
+    <string name="streak_display">Streak Display</string>
 </resources>

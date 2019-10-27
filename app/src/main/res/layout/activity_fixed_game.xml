@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cardview_dark_background"
+    android:background="#FFFFFF"
     tools:context=".FixedGame">
 
     <TextView
@@ -27,7 +27,7 @@
         android:layout_width="67dp"
         android:layout_height="62dp"
         android:background="#00BCD4"
-        android:text="GO"
+        android:text="@string/go"
         android:textColor="#FFFFFF"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -125,6 +125,7 @@
         android:id="@+id/exitButton"
         android:layout_width="71dp"
         android:layout_height="70dp"
+        android:contentDescription="@string/exits_screen"
         android:src="@drawable/exit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -137,7 +138,7 @@
         android:id="@+id/score"
         android:layout_width="87dp"
         android:layout_height="48dp"
-        android:text="0"
+        android:text="@string/_0"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -150,6 +151,7 @@
         android:id="@+id/fixedStreak"
         android:layout_width="88dp"
         android:layout_height="71dp"
+        android:contentDescription="@string/streak_display"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

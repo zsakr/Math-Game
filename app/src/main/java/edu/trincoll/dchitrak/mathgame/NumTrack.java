@@ -190,15 +190,6 @@ public class NumTrack {
         }
 
 
-/**
- for (i = 1; i < 12; i++) {
- System.out.println(player[i]);
- }
- for (i = 1; i < 12; i++) {
- System.out.println(playerScore[i]);
- }
- */
-
         Writer writer = null;
 
         try {
@@ -277,8 +268,25 @@ public class NumTrack {
         }
 
         return returnArr;
+    }
 
+    public boolean checkSkill(int score) {
+        String text = "";
+        int lineNumber;
+        try {
+            FileReader readfile = new FileReader("leaderboard.txt");
+            BufferedReader readbuffer = new BufferedReader(readfile);
+            for (lineNumber = 1; lineNumber <= 11; lineNumber++) {
+                text = readbuffer.readLine();
+            }
 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (Integer.parseInt(text) > score) {
+            return false;
+        }
+        return true;
     }
 
 
