@@ -9,7 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
-public class Sound extends AppCompatActivity {
+public class Sound_W extends AppCompatActivity {
 
     public SoundPool soundPool;
     public int diff, boom, end, fix, right, wrong;
