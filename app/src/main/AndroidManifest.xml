@@ -9,11 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
-=======
+
         <activity android:name=".ChooseType"></activity>
-        <activity android:name=".LeaderboardInput" />
->>>>>>> fae89d99c1778a25f33917b4254d39cc8fcc11b0
         <activity android:name=".ResultsPage" />
         <activity android:name=".TimedGame" />
         <activity android:name=".FixedGame" />

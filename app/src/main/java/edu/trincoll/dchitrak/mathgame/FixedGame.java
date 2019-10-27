@@ -3,7 +3,6 @@ package edu.trincoll.dchitrak.mathgame;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class FixedGame extends AppCompatActivity {
     private GenerateProblem problem = new GenerateProblem(1, 10);
     private NumTrack tracker = new NumTrack();
-    private int numQues = 5;
+    private int numQues = 6;
     private int number = 1;
 
 
