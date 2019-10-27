@@ -21,7 +21,11 @@ public class FixedGame extends AppCompatActivity {
     private void chooseType(){
         String Game = getIntent().getExtras().getString("type");
         if(Game.equals("binary")){
-            problem= new Binary(0, 64);
+            problem= new Binary(0, 8);
+        }else if(Game.equals("dec")){
+            problem= new Decimal(1, 10);
+        }else if(Game.equals("hex")){
+            problem = new Hex(1, 16);
         }
     }
 
@@ -116,6 +120,7 @@ public class FixedGame extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fixed_game);
+        chooseType();
         displayProblem();
         buttonClick();
 
