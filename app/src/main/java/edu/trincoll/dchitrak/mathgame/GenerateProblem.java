@@ -2,7 +2,7 @@ package edu.trincoll.dchitrak.mathgame;
 
 import java.util.Random;
 
-public class GenerateProblem {
+public class GenerateProblem{
 
     private int max;
     private int min;
