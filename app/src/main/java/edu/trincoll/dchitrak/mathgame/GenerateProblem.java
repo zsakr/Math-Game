@@ -53,19 +53,19 @@ public class GenerateProblem{
         results = num;
     }
 
-    public int getNum1(){
-        return num1;
+    public String getNum1(){
+        return Integer.toString(num1);
     }
 
-    public int getNum2(){
-        return num2;
+    public String getNum2(){
+        return Integer.toString(num2);
     }
 
     public String getOp(){
         return op;
     }
 
-    public int getResults(){
-        return results;
+    public String getResults(){
+        return Integer.toString(results);
     }
 }

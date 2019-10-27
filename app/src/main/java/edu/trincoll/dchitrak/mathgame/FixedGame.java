@@ -18,6 +18,7 @@ public class FixedGame extends AppCompatActivity {
     private int numQues = 6;
     private int number = 1;
 
+    // functiont to determine which constructor to use base on dec/hex/binary
     private void chooseType(){
         String Game = getIntent().getExtras().getString("type");
         if(Game.equals("binary")){
@@ -76,8 +77,8 @@ public class FixedGame extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String value = ed.getText().toString();
-                int finalValue = Integer.parseInt(value);
-                if (finalValue == problem.getResults()) {
+
+                if (value.equals(problem.getResults())) {
                     //Log.d("Success", "Happy")
                     tracker.recalculateScore();
                     TextView tvs = (TextView) findViewById(R.id.score);
