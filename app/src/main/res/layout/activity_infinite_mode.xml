@@ -9,12 +9,11 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="249dp"
-        android:layout_height="154dp"
-        android:layout_marginBottom="516dp"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintHorizontal_bias="0.50"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
@@ -62,16 +61,17 @@
         android:id="@+id/infScore"
         android:layout_width="87dp"
         android:layout_height="48dp"
+        android:layout_marginTop="45dp"
         android:gravity="center"
         android:text="0"
         android:textSize="35sp"
         android:textStyle="bold"
+        app:fontFamily="@font/archivo_black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.53"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.079" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/infNum1"
