@@ -18,7 +18,7 @@ public class TimedGame extends AppCompatActivity {
     protected final int SECOND = 1000;      // sec is 1000 millis
     private int numCorrect = 0;
 
-    private NumTrack tracker = new NumTrack();
+    private final NumTrack tracker = new NumTrack();
     private GenerateProblem prob = new GenerateProblem(1, 10);
 
     protected void clearInputText() {
@@ -79,7 +79,9 @@ public class TimedGame extends AppCompatActivity {
         }.start();
 
 
-       //set up exit button, which returns to home page
+
+
+        //set up exit button, which returns to home page
        ImageButton exit = (ImageButton) findViewById(R.id.exitButton);
 
        exit.setOnClickListener(new View.OnClickListener() {
@@ -103,7 +105,10 @@ public class TimedGame extends AppCompatActivity {
 
                 if (guess == prob.getResults()) {  // problem answered correctly
                     numCorrect++;
+                    tracker.recalculateScore();
                     displayProblem();           // change problem only if answered correctly
+                } else {
+                    tracker.resetStreak();
                 }
 
                 clearInputText();
