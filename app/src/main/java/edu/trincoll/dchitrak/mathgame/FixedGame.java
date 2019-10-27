@@ -97,7 +97,7 @@ public class FixedGame extends AppCompatActivity {
         if (number>numQues){
             clearDisplay();
             Intent startint;
-            if(tracker.checkSkill(tracker.getScore())){
+            if(tracker.checkSkill20Q(tracker.getScore(), tracker.getStreaks(), tracker.getTimeInt())){
                 startint = new Intent(getApplicationContext(), LeaderboardInput.class);
             }else{
                 startint = new Intent(getApplicationContext(), ResultsPage.class);
