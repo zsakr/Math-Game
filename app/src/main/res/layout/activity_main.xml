@@ -29,40 +29,39 @@
         android:text="20 Questions"
         android:textSize="30sp"
         app:fontFamily="@font/architects_daughter"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/timeButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.297" />
+        app:layout_constraintVertical_bias="0.881" />
 
     <Button
         android:id="@+id/timeButton"
         android:layout_width="248dp"
         android:layout_height="83dp"
+        android:layout_marginBottom="32dp"
         android:text="Time Mode"
         android:textAllCaps="false"
         android:textSize="30sp"
         app:fontFamily="@font/architects_daughter"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/infinityButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.459" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/infinityButton"
         android:layout_width="248dp"
         android:layout_height="83dp"
+        android:layout_marginBottom="236dp"
         android:text="No Mistakes"
         android:textSize="30sp"
         app:fontFamily="@font/architects_daughter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.612" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/blastButt"
@@ -84,10 +83,10 @@
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintHorizontal_bias="0.052"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.925"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/rocket" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
