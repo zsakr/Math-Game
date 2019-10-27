@@ -1,6 +1,10 @@
 package edu.trincoll.dchitrak.mathgame;
 
 import android.content.Intent;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
+import android.media.SoundPool;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +18,8 @@ public class Difficulty extends AppCompatActivity {
 
 
     String gameTag;
+    public SoundPool soundPool;
+    public int diff, boom, end, fix, right, wrong;
 
     //set up exit button, which returns to home page
     private void onExitButtClick() {
@@ -23,6 +29,7 @@ public class Difficulty extends AppCompatActivity {
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(diff, 1, 1, 0, 0, 1);
                 Intent startint = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(startint);
             }
@@ -37,7 +44,7 @@ public class Difficulty extends AppCompatActivity {
         easy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                soundPool.play(diff, 1, 1, 0, 0, 1);
                 Intent startint = new Intent(getApplicationContext(), ChooseType.class);
                 startint.putExtra("gameType", gameTag);
                 startint.putExtra("difficulty", "easy");
@@ -53,7 +60,7 @@ public class Difficulty extends AppCompatActivity {
         medium.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                soundPool.play(diff, 1, 1, 0, 0, 1);
                 Intent startint = new Intent(getApplicationContext(), ChooseType.class);
                 startint.putExtra("gameType", gameTag);
                 startint.putExtra("difficulty", "medium");
@@ -69,7 +76,7 @@ public class Difficulty extends AppCompatActivity {
         hard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                soundPool.play(diff, 1, 1, 0, 0, 1);
                 Intent startint = new Intent(getApplicationContext(), ChooseType.class);
                 startint.putExtra("gameType", gameTag);
                 startint.putExtra("difficulty", "hard");
@@ -84,6 +91,26 @@ public class Difficulty extends AppCompatActivity {
         setContentView(R.layout.activity_difficulty);
 
         gameTag = getIntent().getExtras().getString("gameType");
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            AudioAttributes audioAttributes = new AudioAttributes.Builder()
+                    .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
+                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                    .build();
+
+            soundPool = new SoundPool.Builder()
+                    .setMaxStreams(6)
+                    .setAudioAttributes(audioAttributes)
+                    .build();
+        } else {
+            soundPool = new SoundPool(6, AudioManager.STREAM_MUSIC, 0);
+        }
+
+        diff = soundPool.load(this, R.raw.difficulty, 1);
+        boom = soundPool.load(this, R.raw.boom, 1);
+        end = soundPool.load(this, R.raw.end, 1);
+        fix = soundPool.load(this, R.raw.fix, 1);
+        right = soundPool.load(this, R.raw.right, 1);
+        wrong = soundPool.load(this, R.raw.wrong, 1);
 
         onExitButtClick();
         onEasyButtClick();
@@ -91,6 +118,11 @@ public class Difficulty extends AppCompatActivity {
         onHardButtClick();
 
     }
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        soundPool.release();
+        soundPool = null;
+    }
 
 }
