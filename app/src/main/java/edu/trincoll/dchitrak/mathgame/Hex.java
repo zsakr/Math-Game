@@ -5,11 +5,29 @@ public class Hex extends GenerateProblem {
         super(min, max);
     }
 
-    public int getNum1(){
-        return num1;
+
+    public void makeProblem(){
+        super.makeProblem();
+        if(op.equals("*")){
+            op = "+";
+            results = num1 + num2;
+        } else{
+            op = "-";
+            num1 = num2/results;
+            results = num1 - num2;
+        }
+
     }
 
-    public int getNum2(){
-        return num2;
+    public String getNum1(){
+        return Integer.toHexString(num1);
+    }
+
+    public String getNum2(){
+        return Integer.toHexString(num2);
+    }
+
+    public String getResults(){
+        return Integer.toHexString(results);
     }
 }

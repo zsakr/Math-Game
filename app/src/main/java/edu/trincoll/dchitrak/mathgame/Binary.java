@@ -10,8 +10,11 @@ public class Binary extends GenerateProblem {
         super.makeProblem();
         if(op.equals("*")){
             op = "+";
+            results = num1 + num2;
         } else{
             op = "-";
+            num1 = num2/results;
+            results = num1 - num2;
         }
 
     }

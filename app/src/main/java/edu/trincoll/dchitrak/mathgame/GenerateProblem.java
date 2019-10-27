@@ -31,6 +31,12 @@ public class GenerateProblem{
     public void makeProblem(){
         num1 = rand.nextInt(max-min) + min;
         num2 = rand.nextInt(max-min) + min;
+
+        if(num2>num1){
+            int temp = num1;
+            num1 = num2;
+            num2 = temp;
+        }
         opNum = rand.nextInt(4);
 
         if (opNum == 0){
