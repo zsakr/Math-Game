@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MathGame</string>
+    <string name="app_name">Blast Math</string>
     <string name="Answer">Answer</string>
     <string name="exits_screen">Exits Screen</string>
     <string name="go">GO</string>
