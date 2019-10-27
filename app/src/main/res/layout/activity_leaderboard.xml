@@ -7,11 +7,11 @@
     tools:context=".Leaderboard">
 
     <TextView
-        android:id="@+id/tempText"
-        android:layout_width="187dp"
-        android:layout_height="146dp"
-        android:text="TextView"
+        android:id="@+id/title"
+        android:layout_width="237dp"
+        android:layout_height="53dp"
+        android:text="Leaderboard"
         android:textSize="40sp"
-        tools:layout_editor_absoluteX="113dp"
-        tools:layout_editor_absoluteY="131dp" />
+        tools:layout_editor_absoluteX="87dp"
+        tools:layout_editor_absoluteY="39dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

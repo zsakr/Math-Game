@@ -11,6 +11,6 @@ public class Leaderboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leaderboard);
-        TextView temp = (TextView) findViewById(R.id.tempText);
+        TextView temp = (TextView) findViewById(R.id.title);
     }
 }
