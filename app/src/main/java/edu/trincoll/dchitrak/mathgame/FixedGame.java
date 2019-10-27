@@ -96,7 +96,13 @@ public class FixedGame extends AppCompatActivity {
         SystemClock.sleep(100);
         if (number>numQues){
             clearDisplay();
-            Intent startint = new Intent(getApplicationContext(), ResultsPage.class);
+            Intent startint;
+            if(tracker.checkSkill(tracker.getScore())){
+                startint = new Intent(getApplicationContext(), LeaderboardInput.class);
+            }else{
+                startint = new Intent(getApplicationContext(), ResultsPage.class);
+            }
+            startint.putExtra("Game", "20Ques");
             startint.putExtra("Score", tracker.getScore()+"");
             startint.putExtra("Time", tracker.getTime()+"");
             startActivity(startint);
