@@ -19,7 +19,20 @@ public class TimedGame extends AppCompatActivity {
     private int numCorrect = 0;
 
     private final NumTrack tracker = new NumTrack();
-    private GenerateProblem problem = new GenerateProblem(1, 10);
+    private GenerateProblem problem;
+
+
+    // functiont to determine which constructor to use base on dec/hex/binary
+    private void chooseType(){
+        String Game = getIntent().getExtras().getString("type");
+        if(Game.equals("binary")){
+            problem= new Binary(0, 8);
+        }else if(Game.equals("dec")){
+            problem= new Decimal(1, 10);
+        }else if(Game.equals("hex")){
+            problem = new Hex(1, 16);
+        }
+    }
 
     // clears the input value
     protected void clearInputText() {

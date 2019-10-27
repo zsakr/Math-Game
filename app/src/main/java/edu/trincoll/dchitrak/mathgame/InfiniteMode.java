@@ -13,9 +13,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class InfiniteMode extends AppCompatActivity {
 
-    private GenerateProblem problem = new GenerateProblem(1, 10);
+    private GenerateProblem problem;
     private NumTrack tracker = new NumTrack();
     private int number = 1;
+
+    // functiont to determine which constructor to use base on dec/hex/binary
+    private void chooseType(){
+        String Game = getIntent().getExtras().getString("type");
+        if(Game.equals("binary")){
+            problem= new Binary(0, 8);
+        }else if(Game.equals("dec")){
+            problem= new Decimal(1, 10);
+        }else if(Game.equals("hex")){
+            problem = new Hex(1, 16);
+        }
+    }
 
 
 
