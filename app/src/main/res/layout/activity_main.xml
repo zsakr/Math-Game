@@ -24,8 +24,9 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="248dp"
+        android:layout_width="250dp"
         android:layout_height="83dp"
+        android:layout_marginBottom="40dp"
         android:text="20 Questions"
         android:textSize="30sp"
         app:fontFamily="@font/architects_daughter"
@@ -34,13 +35,13 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.881" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/timeButton"
-        android:layout_width="248dp"
+        android:layout_width="250dp"
         android:layout_height="83dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="40dp"
         android:text="Time Mode"
         android:textAllCaps="false"
         android:textSize="30sp"
@@ -52,9 +53,9 @@
 
     <Button
         android:id="@+id/infinityButton"
-        android:layout_width="248dp"
+        android:layout_width="250dp"
         android:layout_height="83dp"
-        android:layout_marginBottom="236dp"
+        android:layout_marginBottom="228dp"
         android:text="No Mistakes"
         android:textSize="30sp"
         app:fontFamily="@font/architects_daughter"
