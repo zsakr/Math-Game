@@ -3,6 +3,7 @@ package edu.trincoll.dchitrak.mathgame;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -98,13 +99,14 @@ public class FixedGame extends AppCompatActivity {
             clearDisplay();
             Intent startint;
             if(tracker.checkSkill20Q(tracker.getScore(), tracker.getStreaks(), tracker.getTimeInt())){
+                Log.d("Help","Work");
                 startint = new Intent(getApplicationContext(), LeaderboardInput.class);
             }else{
                 startint = new Intent(getApplicationContext(), ResultsPage.class);
             }
-            startint.putExtra("Game", "20Ques");
             startint.putExtra("Score", tracker.getScore()+"");
-            startint.putExtra("Time", tracker.getTime()+"");
+            startint.putExtra("Time", tracker.getTimeInt()+"");
+            startint.putExtra("Streaks", tracker.getStreaks()+"");
 
             startActivity(startint);
         }

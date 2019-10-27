@@ -923,9 +923,9 @@ public class NumTrack {
     }
 
     public boolean checkSkill20Q(int score, int streaks, int time) {
-        String text1 = "";
-        String text2 = "";
-        String text3 = "";
+        String text1 = "0";
+        String text2 = "0";
+        String text3 = "0";
 
         int lineNumber;
         try {

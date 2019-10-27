@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,8 +13,12 @@ import android.widget.TextView;
 
 public class LeaderboardInput extends AppCompatActivity {
 
-    private void addToLeaderboard(String name, String score, String time, String game){
-        System.out.println("Hi");
+    NumTrack tracker = new NumTrack();
+
+    private void addToLeaderboard(String name, String score, String time, String streaks){
+        tracker.set20qSAS(name, Integer.parseInt(time), Integer.parseInt(streaks));
+        tracker.set20qSCORE(name, Integer.parseInt(streaks));
+        Log.d("Added to", "Leaderboard");
     }
 
     private void hitSubmitButt(){
@@ -24,11 +29,11 @@ public class LeaderboardInput extends AppCompatActivity {
                 EditText name = (EditText) findViewById(R.id.nameInput);
                 String NameString = name.getText().toString();
                 if(!NameString.isEmpty()) {
+                    String Streaks = getIntent().getExtras().getString("Streaks");
                     String Score = getIntent().getExtras().getString("Score");
                     String Time = getIntent().getExtras().getString("Time");
-                    String Game = getIntent().getExtras().getString("Game");
 
-                    addToLeaderboard(NameString, Score, Time, Game);
+                    addToLeaderboard(NameString, Score, Time, Streaks);
                     Intent startint = new Intent(getApplicationContext(), ResultsPage.class);
                     startint.putExtra("Score", Score);
                     startint.putExtra("Time", Time);
@@ -38,19 +43,6 @@ public class LeaderboardInput extends AppCompatActivity {
         });
 
     }
-
-
-    private void dispFinal(){
-        String Score = getIntent().getExtras().getString("Score");
-        String Time = getIntent().getExtras().getString("Time");
-
-        TextView tvs = (TextView) findViewById(R.id.dispScore);
-        TextView tvt = (TextView) findViewById(R.id.dispTime);
-
-        tvs.setText(Score);
-        tvt.setText(Time);
-    }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
