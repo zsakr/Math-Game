@@ -1,21 +1,33 @@
 package edu.trincoll.dchitrak.mathgame;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class ResultsPage extends AppCompatActivity {
 
-    private void buttonClick(){
+    private void exitButtonClick(){
         ImageButton exitButton = (ImageButton) findViewById(R.id.exitButton);
         exitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent startint = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(startint);
+            }
+        });
+    }
+
+    private void leaderboardButtonClick(){
+        Button leaderboardButton = (Button) findViewById(R.id.leaderboardButton);
+        leaderboardButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent startint = new Intent(getApplicationContext(), Leaderboard.class);
                 startActivity(startint);
             }
         });
@@ -36,6 +48,7 @@ public class ResultsPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results_page);
         dispFinal();
-        buttonClick();
+        exitButtonClick();
+        leaderboardButtonClick();
     }
 }

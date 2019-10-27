@@ -4,6 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TopScores">
+    tools:context=".Leaderboard">
 
+    <TextView
+        android:id="@+id/tempText"
+        android:layout_width="187dp"
+        android:layout_height="146dp"
+        android:text="TextView"
+        android:textSize="40sp"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="131dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
