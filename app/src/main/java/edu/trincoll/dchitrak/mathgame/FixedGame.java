@@ -1,6 +1,10 @@
 package edu.trincoll.dchitrak.mathgame;
 
 import android.content.Intent;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
+import android.media.SoundPool;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.View;
@@ -15,6 +19,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class FixedGame extends AppCompatActivity {
     private GenerateProblem problem;
     private NumTrack tracker = new NumTrack();
+    public SoundPool soundPool;
+    public int diff, boom, end, fix, right, wrong;
     private int numQues = 20;
     private int number = 1;
 
@@ -98,6 +104,7 @@ public class FixedGame extends AppCompatActivity {
         exitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(diff, 1, 1, 0, 0, 1);
                 Intent startint = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(startint);
             }
@@ -112,6 +119,7 @@ public class FixedGame extends AppCompatActivity {
 
                 if (value.equals(problem.getResults())) {
                     //Log.d("Success", "Happy")
+                    soundPool.play(right, 1, 1, 0, 0, 1);
                     tracker.recalculateScore();
                     TextView tvs = (TextView) findViewById(R.id.score);
                     number++;;
@@ -120,6 +128,7 @@ public class FixedGame extends AppCompatActivity {
                     tvs.setText(tracker.getScore()+"");
                 } else {
                     //Log.d("Fail", "Sad");
+                    soundPool.play(wrong, 1, 1, 0, 0, 1);
                     tracker.resetStreak();
                 }
                 ed.setText("");
@@ -139,6 +148,7 @@ public class FixedGame extends AppCompatActivity {
         if (number>numQues){
             clearDisplay();
             Intent startint;
+            soundPool.play(end, 1, 1, 0, 0, 1);
             startint = new Intent(getApplicationContext(), ResultsPage.class);
 
             startint.putExtra("Score", tracker.getScore()+"");
@@ -153,9 +163,35 @@ public class FixedGame extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fixed_game);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            AudioAttributes audioAttributes = new AudioAttributes.Builder()
+                    .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
+                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                    .build();
+
+            soundPool = new SoundPool.Builder()
+                    .setMaxStreams(6)
+                    .setAudioAttributes(audioAttributes)
+                    .build();
+        } else {
+            soundPool = new SoundPool(6, AudioManager.STREAM_MUSIC, 0);
+        }
+
+        diff = soundPool.load(this, R.raw.difficulty, 1);
+        boom = soundPool.load(this, R.raw.boom, 1);
+        end = soundPool.load(this, R.raw.end, 1);
+        fix = soundPool.load(this, R.raw.fix, 1);
+        right = soundPool.load(this, R.raw.right, 1);
+        wrong = soundPool.load(this, R.raw.wrong, 1);
         chooseType();
         displayProblem();
         buttonClick();
 
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        soundPool.release();
+        soundPool = null;
     }
 }

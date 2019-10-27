@@ -1,6 +1,10 @@
 package edu.trincoll.dchitrak.mathgame;
 
 import android.content.Intent;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
+import android.media.SoundPool;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -12,7 +16,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class TimedGame extends AppCompatActivity {
-
+    public SoundPool soundPool;
+    public int diff, boom, end, fix, right, wrong;
     protected int counter = 0;
     protected final int MAXTIME = 60000;    // max time in millis
     protected final int SECOND = 1000;      // sec is 1000 millis
@@ -72,6 +77,26 @@ public class TimedGame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timed_game);
         chooseType();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            AudioAttributes audioAttributes = new AudioAttributes.Builder()
+                    .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
+                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                    .build();
+
+            soundPool = new SoundPool.Builder()
+                    .setMaxStreams(6)
+                    .setAudioAttributes(audioAttributes)
+                    .build();
+        } else {
+            soundPool = new SoundPool(6, AudioManager.STREAM_MUSIC, 0);
+        }
+
+        diff = soundPool.load(this, R.raw.difficulty, 1);
+        boom = soundPool.load(this, R.raw.boom, 1);
+        end = soundPool.load(this, R.raw.end, 1);
+        fix = soundPool.load(this, R.raw.fix, 1);
+        right = soundPool.load(this, R.raw.right, 1);
+        wrong = soundPool.load(this, R.raw.wrong, 1);
         final EditText inputText = findViewById(R.id.guessInput);
         final TextView timerText = findViewById(R.id.countdown);
         final TextView scoreText = findViewById(R.id.score);
@@ -92,6 +117,7 @@ public class TimedGame extends AppCompatActivity {
             // go to results page when time is up
             public void onFinish(){
                 Intent startint = new Intent(getApplicationContext(), ResultsPage.class);
+                soundPool.play(end, 1, 1, 0, 0, 1);
                 startint.putExtra("Score", tracker.getScore()+"");
                 startint.putExtra("Time", tracker.getTime()+"");
                 startActivity(startint);
@@ -125,9 +151,11 @@ public class TimedGame extends AppCompatActivity {
                 String value = inputText.getText().toString();
 
                 if (value.equals(problem.getResults())) {  // problem answered correctly
+                    soundPool.play(right, 1, 1, 0, 0, 1);
                     tracker.recalculateScore();
                     displayProblem();           // change problem only if answered correctly
                 } else {
+                    soundPool.play(wrong, 1, 1, 0, 0, 1);
                     tracker.resetStreak();
                 }
 
@@ -140,5 +168,10 @@ public class TimedGame extends AppCompatActivity {
 
     }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        soundPool.release();
+        soundPool = null;
+    }
 }

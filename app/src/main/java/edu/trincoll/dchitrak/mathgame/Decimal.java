@@ -26,7 +26,7 @@ public class Decimal extends GenerateProblem {
             results = num1*num2;
         }else{
             op = "/";
-            results = (num1%num2)+rand.nextInt((max-min)*2);
+            results = (num1%num2)+rand.nextInt(8);
             num1 = num2*results;
         }
     }
