@@ -18,42 +18,42 @@ public class InfiniteMode extends AppCompatActivity {
     private int number = 1;
 
     // functiont to determine which constructor to use base on dec/hex/binary
-    private void chooseType(){
+    private void chooseType() {
         String Game = getIntent().getExtras().getString("type");
         String diff = getIntent().getExtras().getString("difficulty");
         int min = 0, max = 0;
-        if(Game.equals("binary")){
-            if (diff.equals("easy")){
+        if (Game.equals("binary")) {
+            if (diff.equals("easy")) {
                 min = 3;
                 max = 8;
-            }else if(diff.equals("medium")){
+            } else if (diff.equals("medium")) {
                 min = 7;
                 max = 16;
-            }else{
+            } else {
                 min = 13;
                 max = 32;
             }
-            problem= new Binary(min,max);
-        }else if(Game.equals("dec")){
-            if (diff.equals("easy")){
+            problem = new Binary(min, max);
+        } else if (Game.equals("dec")) {
+            if (diff.equals("easy")) {
                 min = 3;
                 max = 14;
-            }else if(diff.equals("medium")){
+            } else if (diff.equals("medium")) {
                 min = 19;
                 max = 73;
-            }else{
+            } else {
                 min = 69;
                 max = 108;
             }
-            problem= new Decimal(min, max);
-        }else if(Game.equals("hex")){
-            if (diff.equals("easy")){
+            problem = new Decimal(min, max);
+        } else if (Game.equals("hex")) {
+            if (diff.equals("easy")) {
                 min = 4;
                 max = 16;
-            }else if(diff.equals("medium")){
+            } else if (diff.equals("medium")) {
                 min = 12;
                 max = 64;
-            }else{
+            } else {
                 min = 69;
                 max = 256;
             }
