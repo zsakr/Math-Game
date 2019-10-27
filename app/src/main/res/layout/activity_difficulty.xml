@@ -6,38 +6,55 @@
     android:layout_height="match_parent"
     tools:context=".Difficulty">
 
+    <ImageButton
+        android:id="@+id/exitButton2"
+        android:layout_width="71dp"
+        android:layout_height="70dp"
+        android:src="@drawable/exit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024" />
+
     <Button
         android:id="@+id/MediumButt"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:text="Button"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:text="Medium"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.529"
-        tools:layout_editor_absoluteX="165dp" />
+        app:layout_constraintVertical_bias="0.633" />
 
     <Button
         android:id="@+id/EasyButt"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:text="Button"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:text="Easy"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/MediumButt"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.529" />
+        app:layout_constraintVertical_bias="0.436" />
 
     <Button
         android:id="@+id/HardButt"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:text="Button"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:text="Hard"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/MediumButt"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.529" />
+        app:layout_constraintVertical_bias="0.862" />
 
     <TextView
         android:id="@+id/textView4"
@@ -50,4 +67,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.262" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
