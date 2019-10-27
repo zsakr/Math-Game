@@ -21,7 +21,7 @@ public class ChooseType extends AppCompatActivity {
     GameType finalType;
 
     // when the exit button is clicked
-    private void buttonClick() {
+    private void onExitClick() {
         ImageButton exitButton = (ImageButton) findViewById(R.id.exitButton);
         exitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,6 +111,7 @@ public class ChooseType extends AppCompatActivity {
         onDecimalClick();
         onBinaryClick();
         onHexClick();
+        onExitClick();
     }
 
 
