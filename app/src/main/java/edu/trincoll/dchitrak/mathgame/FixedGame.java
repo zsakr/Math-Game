@@ -98,12 +98,8 @@ public class FixedGame extends AppCompatActivity {
         if (number>numQues){
             clearDisplay();
             Intent startint;
-            if(tracker.checkSkill20Q(tracker.getScore(), tracker.getStreaks(), tracker.getTimeInt())){
-                Log.d("Help","Work");
-                startint = new Intent(getApplicationContext(), LeaderboardInput.class);
-            }else{
-                startint = new Intent(getApplicationContext(), ResultsPage.class);
-            }
+            startint = new Intent(getApplicationContext(), ResultsPage.class);
+
             startint.putExtra("Score", tracker.getScore()+"");
             startint.putExtra("Time", tracker.getTimeInt()+"");
             startint.putExtra("Streaks", tracker.getStreaks()+"");

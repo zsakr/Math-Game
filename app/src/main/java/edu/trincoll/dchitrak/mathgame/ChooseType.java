@@ -11,6 +11,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ChooseType extends AppCompatActivity {
 
+    enum GameType {
+        FIXED,
+        TIMED,
+        INFINITE,
+        SHIT
+    }
+
     // when the exit button is clicked
     private void buttonClick() {
         ImageButton exitButton = (ImageButton) findViewById(R.id.exitButton);
@@ -59,14 +66,32 @@ public class ChooseType extends AppCompatActivity {
         });
     }
 
+    // convert tag to an enum game type
+    private GameType convertTag(String gameTypeTag) {
+        if (gameTypeTag.equals("FixedGame.class")) {
+            return GameType.FIXED;
+        } else if (gameTypeTag.equals("TimedGame.class")) {
+            return GameType.TIMED;
+        } else if (gameTypeTag.equals("InfiniteMode.class")) {
+            return GameType.INFINITE;
+        }
+
+        return GameType.SHIT;   // sth went wrong
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_type);
 
-        String gameType = getIntent().getExtras().getString("GameType");
-        Log.d("GameType", gameType);
+        String gameTypeTag = getIntent().getExtras().getString("gameType");
+        Log.d("GameType", gameTypeTag);
+        GameType type = convertTag(gameTypeTag);
+
+
+
+
 
         // check the different buttons
         onDecimalClick();
