@@ -22,16 +22,6 @@ public class ResultsPage extends AppCompatActivity {
         });
     }
 
-    private void leaderboardButtonClick(){
-        Button leaderboardButton = (Button) findViewById(R.id.leaderboardButton);
-        leaderboardButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent startint = new Intent(getApplicationContext(), Leaderboard.class);
-                startActivity(startint);
-            }
-        });
-    }
 
     private void dispFinal(){
         String Score = getIntent().getExtras().getString("Score");
@@ -49,6 +39,5 @@ public class ResultsPage extends AppCompatActivity {
         setContentView(R.layout.activity_results_page);
         dispFinal();
         exitButtonClick();
-        leaderboardButtonClick();
     }
 }
