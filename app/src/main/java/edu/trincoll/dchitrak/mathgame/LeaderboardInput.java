@@ -22,12 +22,13 @@ public class LeaderboardInput extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 EditText name = (EditText) findViewById(R.id.nameInput);
-                if(!name.equals("")) {
+                String NameString = name.getText().toString();
+                if(!NameString.equals("")) {
                     String Score = getIntent().getExtras().getString("Score");
                     String Time = getIntent().getExtras().getString("Time");
                     String Game = getIntent().getExtras().getString("Game");
 
-                    addToLeaderboard(name, Score, Time, Game);
+                    addToLeaderboard(NameString, Score, Time, Game);
                     Intent startint = new Intent(getApplicationContext(), ResultsPage.class);
                     startint.putExtra("Score", Score);
                     startint.putExtra("Time", Time);
