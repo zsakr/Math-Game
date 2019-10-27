@@ -65,8 +65,8 @@ public class InfiniteMode extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String value = ed.getText().toString();
-                int finalValue = Integer.parseInt(value);
-                if (finalValue == problem.getResults()) {
+
+                if (value.equals(problem.getResults())) {
                     //Log.d("Success", "Happy")
                     tracker.recalculateScore();
                     TextView tvs = (TextView) findViewById(R.id.infScore);

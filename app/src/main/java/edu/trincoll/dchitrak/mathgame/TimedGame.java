@@ -19,7 +19,7 @@ public class TimedGame extends AppCompatActivity {
     private int numCorrect = 0;
 
     private final NumTrack tracker = new NumTrack();
-    private GenerateProblem prob = new GenerateProblem(1, 10);
+    private GenerateProblem problem = new GenerateProblem(1, 10);
 
     // clears the input value
     protected void clearInputText() {
@@ -38,10 +38,10 @@ public class TimedGame extends AppCompatActivity {
         TextView opText =  findViewById(R.id.operator);
 
         //init vars and screen
-        prob.makeProblem();
-        num1Text.setText(prob.getNum1()+"");
-        num2Text.setText(prob.getNum2()+"");
-        opText.setText(prob.getOp()+"");
+        problem.makeProblem();
+        num1Text.setText(problem.getNum1()+"");
+        num2Text.setText(problem.getNum2()+"");
+        opText.setText(problem.getOp()+"");
 
     }
 
@@ -110,10 +110,9 @@ public class TimedGame extends AppCompatActivity {
        submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String guessString = inputText.getText().toString();
-                int guess = Integer.parseInt(guessString);
+                String value = inputText.getText().toString();
 
-                if (guess == prob.getResults()) {  // problem answered correctly
+                if (value.equals(problem.getResults())) {  // problem answered correctly
                     numCorrect++;
                     tracker.recalculateScore();
                     displayProblem();           // change problem only if answered correctly
