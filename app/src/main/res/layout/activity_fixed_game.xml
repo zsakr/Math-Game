@@ -156,17 +156,16 @@
         android:id="@+id/score"
         android:layout_width="87dp"
         android:layout_height="48dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="50dp"
         android:gravity="center"
         android:text="@string/_0"
         android:textSize="35sp"
         app:fontFamily="@font/archivo_black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.057" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/fixedStreak"

@@ -23,7 +23,7 @@
         android:id="@+id/score"
         android:layout_width="92dp"
         android:layout_height="45dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="50dp"
         android:gravity="center"
         android:text="0"
         android:textSize="35sp"
