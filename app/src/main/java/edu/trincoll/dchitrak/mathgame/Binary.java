@@ -6,6 +6,10 @@ public class Binary extends GenerateProblem {
         super(min, max);
     }
 
+    public Binary(){
+        super();
+    }
+
     public void makeProblem(){
         super.makeProblem();
     }

@@ -4,7 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+enum Diff{
+    EASY,
+    MEDIUM,
+    HARD
+}
+
+
+
 public class Difficulty extends AppCompatActivity {
+
+//    static difficultyValue diffVal = new difficultyValue();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
