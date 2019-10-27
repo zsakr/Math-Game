@@ -6,6 +6,7 @@ public class Decimal extends GenerateProblem {
     }
 
     public void makeProblem(){
+<<<<<<< HEAD
 
         opNum = rand.nextInt(4);
 
@@ -27,4 +28,11 @@ public class Decimal extends GenerateProblem {
 
 
 
+=======
+        super.makeProblem();
+
+
+    }
+
+>>>>>>> 61fe724f32a40744280f6cce4cdddde3f30b2720
 }
