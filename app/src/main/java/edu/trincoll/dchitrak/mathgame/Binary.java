@@ -11,13 +11,21 @@ public class Binary extends GenerateProblem {
         if(op.equals("*")){
             op = "+";
         } else{
-            op = "-"
+            op = "-";
         }
 
-        convert();
     }
 
-    public void convert(){
-        num1 =
+    public String getNum1(){
+        return Integer.toBinaryString(num1);
     }
+
+    public String getNum2(){
+        return Integer.toBinaryString(num2);
+    }
+
+    public String getResults(){
+        return Integer.toBinaryString(results);
+    }
+
 }
