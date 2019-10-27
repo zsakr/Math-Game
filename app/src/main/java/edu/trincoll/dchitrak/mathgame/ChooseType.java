@@ -107,12 +107,6 @@ public class ChooseType extends AppCompatActivity {
         finalType = convertTag(gameTypeTag);
 
 
-
-
-        String gameType = getIntent().getExtras().getString("GameType");
-        Log.d("GameType", "Hi");
-
-
         // check the different buttons
         onDecimalClick();
         onBinaryClick();
