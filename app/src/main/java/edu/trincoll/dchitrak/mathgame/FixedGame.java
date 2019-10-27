@@ -13,12 +13,17 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class FixedGame extends AppCompatActivity {
-    private GenerateProblem problem = new GenerateProblem(1, 10);
+    private GenerateProblem problem;
     private NumTrack tracker = new NumTrack();
     private int numQues = 6;
     private int number = 1;
 
-
+    private void chooseType(){
+        String Game = getIntent().getExtras().getString("type");
+        if(Game.equals("binary")){
+            problem= new Binary(0, 64);
+        }
+    }
 
     private void clearDisplay(){
         TextView tv1 = (TextView) findViewById(R.id.textView);

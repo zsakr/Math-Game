@@ -21,7 +21,7 @@ public class ChooseType extends AppCompatActivity {
     GameType finalType;
 
     // when the exit button is clicked
-    private void buttonClick() {
+    private void onExitClick() {
         ImageButton exitButton = (ImageButton) findViewById(R.id.exitButton);
         exitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +39,7 @@ public class ChooseType extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent startint = createIntent();
+                startint.putExtra("type", "dec");
                 startActivity(startint);
             }
         });
@@ -51,6 +52,7 @@ public class ChooseType extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent startint = createIntent();
+                startint.putExtra("type", "binary");
                 startActivity(startint);
             }
         });
@@ -63,6 +65,7 @@ public class ChooseType extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent startint = createIntent();
+                startint.putExtra("type", "hex");
                 startActivity(startint);
             }
         });
@@ -103,7 +106,7 @@ public class ChooseType extends AppCompatActivity {
 
 
         String gameTypeTag = getIntent().getExtras().getString("gameType");
-        Log.d("GameType", gameTypeTag);
+        Log.d("gameType", gameTypeTag);
         finalType = convertTag(gameTypeTag);
 
 
@@ -111,6 +114,7 @@ public class ChooseType extends AppCompatActivity {
         onDecimalClick();
         onBinaryClick();
         onHexClick();
+        onExitClick();
     }
 
 
