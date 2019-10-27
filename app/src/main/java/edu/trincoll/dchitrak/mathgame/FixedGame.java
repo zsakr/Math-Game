@@ -21,7 +21,7 @@ public class FixedGame extends AppCompatActivity {
     private NumTrack tracker = new NumTrack();
     public SoundPool soundPool;
     public int diff, boom, end, fix, right, wrong;
-    private int numQues = 20;
+    private int numQues = 4;
     private int number = 1;
 
     // functiont to determine which constructor to use base on dec/hex/binary
@@ -193,5 +193,12 @@ public class FixedGame extends AppCompatActivity {
         super.onDestroy();
         soundPool.release();
         soundPool = null;
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent startint = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(startint);
     }
 }

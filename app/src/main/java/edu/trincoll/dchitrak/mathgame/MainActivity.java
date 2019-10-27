@@ -130,5 +130,11 @@ public class MainActivity extends AppCompatActivity {
         soundPool.release();
         soundPool = null;
     }
+    @Override
+    public void onBackPressed()
+    {
+        finish();
+        System.exit(0);
+    }
 }
 
