@@ -4,19 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#070707"
-    android:theme="@android:style/Theme.Material.NoActionBar"
+    android:background="@drawable/space_background"
     tools:context=".MainActivity">
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="566dp"
-        android:layout_height="833dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/outer" />
 
     <Button
         android:id="@+id/infinityButton"
@@ -50,7 +39,7 @@
         android:layout_height="wrap_content"
         android:text="Blast Math!"
         android:textColor="#F0EDED"
-        android:textSize="48sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         app:fontFamily="serif"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -69,5 +58,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/blastButt"
+        android:layout_width="86dp"
+        android:layout_height="163dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/rocket"
+        app:layout_constraintEnd_toEndOf="@+id/rocket"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/rocket"
+        app:layout_constraintTop_toTopOf="@+id/rocket"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/rocket"
+        android:layout_width="86dp"
+        android:layout_height="163dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.949"
+        app:srcCompat="@drawable/rocket" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
