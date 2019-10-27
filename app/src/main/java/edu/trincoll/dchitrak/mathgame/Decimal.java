@@ -5,4 +5,10 @@ public class Decimal extends GenerateProblem {
         super(min, max);
     }
 
+    public void makeProblem(){
+        super.makeProblem();
+
+
+    }
+
 }

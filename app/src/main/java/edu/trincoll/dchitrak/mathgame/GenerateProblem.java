@@ -37,7 +37,7 @@ public class GenerateProblem{
             num1 = num2;
             num2 = temp;
         }
-        opNum = rand.nextInt(4);
+        opNum = rand.nextInt(2);
 
         if (opNum == 0){
             op = "+";
@@ -45,13 +45,6 @@ public class GenerateProblem{
         }else if(opNum == 1){
             op = "-";
             results = num1-num2;
-        }else if(opNum == 2){
-            op = "x";
-            results = num1*num2;
-        }else{
-            op = "/";
-            results = (num1%num2)+rand.nextInt((max-min)*2);
-            num1 = num2*results;
         }
     }
 
