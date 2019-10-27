@@ -66,7 +66,7 @@ public class ChooseType extends AppCompatActivity {
         setContentView(R.layout.activity_choose_type);
 
         String gameType = getIntent().getExtras().getString("GameType");
-        Log.d("GameType", gameType);
+        Log.d("GameType", "Hi");
 
         // check the different buttons
         onDecimalClick();
