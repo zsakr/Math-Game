@@ -11,9 +11,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class MainActivity extends AppCompatActivity {
+    static Diff diffval = Diff.EASY;
     boolean toggle = true;
 
-    static Diff diffval = Diff.EASY;
+
 
     private void menuSelection(){
         /* this button is for the fixed game setup */
