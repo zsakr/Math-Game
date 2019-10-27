@@ -18,7 +18,7 @@ public class TimedGame extends AppCompatActivity {
     protected final int SECOND = 1000;      // sec is 1000 millis
     private int numCorrect = 0;
 
-    private NumTrack tracker = new NumTrack();
+    private final NumTrack tracker = new NumTrack();
     private GenerateProblem prob = new GenerateProblem(1, 10);
 
     protected void clearInputText() {
@@ -78,7 +78,6 @@ public class TimedGame extends AppCompatActivity {
 
         }.start();
 
-        NumTrack tracker = new NumTrack();
 
 
 
