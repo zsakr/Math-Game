@@ -4,14 +4,14 @@ import java.util.Random;
 
 public class GenerateProblem{
 
-    private int max;
-    private int min;
-    private int num1;
-    private int num2;
-    private int opNum;
-    private String op;
-    private int results;
-    Random rand = new Random();
+    protected int max;
+    protected int min;
+    protected int num1;
+    protected int num2;
+    protected int opNum;
+    protected String op;
+    protected int results;
+    protected Random rand = new Random();
 
     public GenerateProblem (int min, int max){
         this.min = min;
