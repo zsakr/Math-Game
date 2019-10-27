@@ -18,7 +18,10 @@ public class ChooseType extends AppCompatActivity {
         SHIT
     }
 
-    GameType finalType;
+
+
+    GameType game;
+    String difficulty;
 
     // when the exit button is clicked
     private void onExitClick() {
@@ -40,6 +43,7 @@ public class ChooseType extends AppCompatActivity {
             public void onClick(View view) {
                 Intent startint = createIntent();
                 startint.putExtra("type", "dec");
+                startint.putExtra("difficulty", difficulty);
                 startActivity(startint);
             }
         });
@@ -53,6 +57,7 @@ public class ChooseType extends AppCompatActivity {
             public void onClick(View view) {
                 Intent startint = createIntent();
                 startint.putExtra("type", "binary");
+                startint.putExtra("difficulty", difficulty);
                 startActivity(startint);
             }
         });
@@ -66,6 +71,7 @@ public class ChooseType extends AppCompatActivity {
             public void onClick(View view) {
                 Intent startint = createIntent();
                 startint.putExtra("type", "hex");
+                startint.putExtra("difficulty", difficulty);
                 startActivity(startint);
             }
         });
@@ -73,11 +79,11 @@ public class ChooseType extends AppCompatActivity {
 
     // creates the appropriate intent based on the game type enum
     private Intent createIntent() {
-        if (finalType == GameType.FIXED) {
+        if (game == GameType.FIXED) {
             return new Intent(getApplicationContext(), FixedGame.class);
-        } else if (finalType ==  GameType.INFINITE) {
+        } else if (game ==  GameType.INFINITE) {
             return new Intent(getApplicationContext(), InfiniteMode.class);
-        } else if (finalType == GameType.TIMED) {
+        } else if (game == GameType.TIMED) {
             return new Intent(getApplicationContext(), TimedGame.class);
         }
 
@@ -86,7 +92,7 @@ public class ChooseType extends AppCompatActivity {
 
 
     // convert tag to an enum game type
-    private GameType convertTag(String gameTypeTag) {
+    private GameType convertGameTag(String gameTypeTag) {
         if (gameTypeTag.equals("FixedGame.class")) {
             return GameType.FIXED;
         } else if (gameTypeTag.equals("TimedGame.class")) {
@@ -99,6 +105,7 @@ public class ChooseType extends AppCompatActivity {
     }
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,8 +113,11 @@ public class ChooseType extends AppCompatActivity {
 
 
         String gameTypeTag = getIntent().getExtras().getString("gameType");
+        difficulty = getIntent().getExtras().getString("difficulty");
+
         Log.d("gameType", gameTypeTag);
-        finalType = convertTag(gameTypeTag);
+        game = convertGameTag(gameTypeTag);
+//        difficulty = convertDiffTag(difficultyTag);
 
 
         // check the different buttons
