@@ -15,6 +15,7 @@
         android:layout_marginRight="120dp"
         android:text=""
         android:textSize="35sp"
+        app:fontFamily="@font/archivo_black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -69,6 +70,7 @@
         android:layout_marginLeft="120dp"
         android:text=""
         android:textSize="35sp"
+        app:fontFamily="@font/archivo_black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -100,7 +102,7 @@
         android:layout_marginRight="120dp"
         android:text=""
         android:textSize="35sp"
-        app:fontFamily="casual"
+        app:fontFamily="@font/archivo_black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -115,6 +117,7 @@
         android:layout_marginTop="5dp"
         android:text=""
         android:textSize="35sp"
+        app:fontFamily="@font/archivo_black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.955"
@@ -130,10 +133,10 @@
         android:src="@drawable/exit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/score"
@@ -142,6 +145,7 @@
         android:layout_marginTop="5dp"
         android:text="@string/_0"
         android:textSize="35sp"
+        app:fontFamily="@font/archivo_black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.339"
