@@ -112,6 +112,7 @@
         android:id="@+id/qsLeft"
         android:layout_width="53dp"
         android:layout_height="49dp"
+        android:layout_marginTop="5dp"
         android:text=""
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -138,26 +139,27 @@
         android:id="@+id/score"
         android:layout_width="87dp"
         android:layout_height="48dp"
+        android:layout_marginTop="5dp"
         android:text="@string/_0"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintHorizontal_bias="0.339"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.074" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <ImageView
         android:id="@+id/fixedStreak"
-        android:layout_width="88dp"
-        android:layout_height="71dp"
+        android:layout_width="75dp"
+        android:layout_height="70dp"
         android:contentDescription="@string/streak_display"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.752"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.11"
+        app:layout_constraintVertical_bias="0.007"
         app:srcCompat="@drawable/transparent" />
 
 

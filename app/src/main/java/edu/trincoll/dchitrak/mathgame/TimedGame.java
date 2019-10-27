@@ -14,13 +14,14 @@ import androidx.appcompat.app.AppCompatActivity;
 public class TimedGame extends AppCompatActivity {
 
     protected int counter = 0;
-    protected final int MAXTIME = 30000;    // max time in millis
+    protected final int MAXTIME = 5000;    // max time in millis
     protected final int SECOND = 1000;      // sec is 1000 millis
     private int numCorrect = 0;
 
     private final NumTrack tracker = new NumTrack();
     private GenerateProblem prob = new GenerateProblem(1, 10);
 
+    // clears the input value
     protected void clearInputText() {
 
         EditText inputText = findViewById(R.id.guessInput);
@@ -28,7 +29,7 @@ public class TimedGame extends AppCompatActivity {
 
     }
 
-
+    // displays a new problem
     protected void displayProblem() {
 
         // set up layout for problem
@@ -43,6 +44,14 @@ public class TimedGame extends AppCompatActivity {
         opText.setText(prob.getOp()+"");
 
     }
+
+//    // displays the fire/streak image
+//    private void displayStreak(){
+//        ImageView streak = (ImageView) findViewById(R.id.fixedStreak);
+//        StreakDisplayer sdisplay = new StreakDisplayer(streak);
+//        sdisplay.setStreak(tracker.getStreaks());
+//        sdisplay.dispStreak();
+//    }
 
 
     @Override
@@ -112,6 +121,7 @@ public class TimedGame extends AppCompatActivity {
                 }
 
                 clearInputText();
+                //displayStreak();
 
             }
         });
