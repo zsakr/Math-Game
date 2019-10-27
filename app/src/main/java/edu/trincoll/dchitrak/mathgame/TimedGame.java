@@ -72,7 +72,7 @@ public class TimedGame extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timed_game);
-
+        chooseType();
         final EditText inputText = findViewById(R.id.guessInput);
         final TextView timerText = findViewById(R.id.countdown);
         final TextView scoreText = findViewById(R.id.score);
