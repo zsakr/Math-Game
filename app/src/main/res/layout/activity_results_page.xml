@@ -39,7 +39,7 @@
 
     <TextView
         android:id="@+id/dispScoreT"
-        android:layout_width="108dp"
+        android:layout_width="122dp"
         android:layout_height="52dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
@@ -68,7 +68,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.606" />
+        app:layout_constraintVertical_bias="0.673" />
 
     <TextView
         android:id="@+id/dispTimeT"
@@ -85,7 +85,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.608" />
+        app:layout_constraintVertical_bias="0.678" />
 
     <TextView
         android:id="@+id/finalMessage"
