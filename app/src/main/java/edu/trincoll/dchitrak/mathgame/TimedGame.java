@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class TimedGame extends AppCompatActivity {
 
     protected int counter = 0;
-    protected final int MAXTIME = 60000;    // max time in millis
+    protected final int MAXTIME = 5000;    // max time in millis
     protected final int SECOND = 1000;      // sec is 1000 millis
     private int numCorrect = 0;
 
