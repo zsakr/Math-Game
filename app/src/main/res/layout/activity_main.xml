@@ -91,10 +91,17 @@
 
     <Button
         android:id="@+id/SelectDiff"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="268dp"
+        android:layout_height="90dp"
         android:text="Select Difficulty"
-        tools:layout_editor_absoluteX="199dp"
-        tools:layout_editor_absoluteY="554dp" />
+        android:textAllCaps="false"
+        android:textSize="30sp"
+        app:fontFamily="@font/architects_daughter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.865" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

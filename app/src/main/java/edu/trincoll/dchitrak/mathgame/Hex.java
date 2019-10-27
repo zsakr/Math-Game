@@ -6,7 +6,7 @@ public class Hex extends GenerateProblem {
     }
 
     public Hex(){
-        
+
         super();
     }
 

@@ -125,7 +125,6 @@ public class TimedGame extends AppCompatActivity {
                 String value = inputText.getText().toString();
 
                 if (value.equals(problem.getResults())) {  // problem answered correctly
-                    numCorrect++;
                     tracker.recalculateScore();
                     displayProblem();           // change problem only if answered correctly
                 } else {
