@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent startint = new Intent(getApplicationContext(), ChooseType.class);
-                startint.putExtra("gameType", "InfinteMode.class");
+                startint.putExtra("gameType", "InfiniteMode.class");
                 startActivity(startint);
             }
         });
