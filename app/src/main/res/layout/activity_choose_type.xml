@@ -22,45 +22,48 @@
 
     <Button
         android:id="@+id/binaryButton"
-        android:layout_width="248dp"
-        android:layout_height="83dp"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="250dp"
         android:text="Binary"
         android:textSize="30sp"
         app:fontFamily="@font/architects_daughter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.62" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/hexButton"
-        android:layout_width="248dp"
-        android:layout_height="83dp"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="25dp"
         android:text="Hex"
         android:textSize="30sp"
         app:fontFamily="@font/architects_daughter"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/binaryButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.456" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/decimalButton"
-        android:layout_width="248dp"
-        android:layout_height="83dp"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="25dp"
         android:text="Decimal"
         android:textSize="30sp"
         app:fontFamily="@font/architects_daughter"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/hexButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.297" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/rocket"
