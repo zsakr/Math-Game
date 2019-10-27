@@ -5,72 +5,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/space_background"
-    tools:context=".MainActivity">
+    tools:context=".ChooseType">
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Blast Math!"
-        android:textColor="#F0EDED"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:fontFamily="serif"
+    <ImageButton
+        android:id="@+id/exitButton"
+        android:layout_width="71dp"
+        android:layout_height="70dp"
+        android:src="@drawable/exit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024" />
+
+    <Button
+        android:id="@+id/binaryButton"
+        android:layout_width="172dp"
+        android:layout_height="53dp"
+        android:text="Binary"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.775" />
+
+    <Button
+        android:id="@+id/hexButton"
+        android:layout_width="172dp"
+        android:layout_height="53dp"
+        android:text="Hex"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.633" />
+
+    <Button
+        android:id="@+id/decimalButton"
+        android:layout_width="172dp"
+        android:layout_height="53dp"
+        android:text="Decimal"
+        android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.055" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="248dp"
-        android:layout_height="83dp"
-        android:text="20 Questions"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.297" />
-
-    <Button
-        android:id="@+id/timeButton"
-        android:layout_width="248dp"
-        android:layout_height="83dp"
-        android:text="Timing"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.459" />
-
-    <Button
-        android:id="@+id/infinityButton"
-        android:layout_width="248dp"
-        android:layout_height="83dp"
-        android:text="Infinite Math"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.612" />
-
-    <Button
-        android:id="@+id/blastButt"
-        android:layout_width="86dp"
-        android:layout_height="163dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="@+id/rocket"
-        app:layout_constraintEnd_toEndOf="@+id/rocket"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/rocket"
-        app:layout_constraintTop_toTopOf="@+id/rocket"
-        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/rocket"
@@ -84,5 +69,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.949"
         app:srcCompat="@drawable/rocket" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
