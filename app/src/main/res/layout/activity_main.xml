@@ -83,25 +83,25 @@
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.949"
+        app:layout_constraintVertical_bias="0.893"
         app:srcCompat="@drawable/rocket" />
 
     <Button
         android:id="@+id/SelectDiff"
-        android:layout_width="268dp"
-        android:layout_height="90dp"
-        android:text="Select Difficulty"
+        android:layout_width="475dp"
+        android:layout_height="72dp"
+        android:gravity="center"
+        android:text="Difficulty Level"
         android:textAllCaps="false"
         android:textSize="30sp"
         app:fontFamily="@font/architects_daughter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.888"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.865" />
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
