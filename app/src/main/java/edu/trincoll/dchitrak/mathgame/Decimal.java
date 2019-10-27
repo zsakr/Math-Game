@@ -5,6 +5,7 @@ public class Decimal extends GenerateProblem {
         super(min, max);
     }
 
+    // copied from the original Generate Problem scenario
     public void makeProblem(){
         super.makeProblem();
 
