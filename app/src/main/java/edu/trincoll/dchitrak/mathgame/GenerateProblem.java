@@ -13,7 +13,7 @@ public class GenerateProblem{
     private int results;
     Random rand = new Random();
 
-    public GenerateProblem(int min, int max){
+    public GenerateProblem (int min, int max){
         this.min = min;
         this.max = max;
     }
