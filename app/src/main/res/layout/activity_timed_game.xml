@@ -77,7 +77,7 @@
         android:imeOptions="actionDone"
         android:importantForAutofill="no"
         android:includeFontPadding="false"
-        android:inputType="numberSigned"
+        android:inputType=""
         android:singleLine="true"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"

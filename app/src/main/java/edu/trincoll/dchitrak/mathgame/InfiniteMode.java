@@ -109,6 +109,7 @@ public class InfiniteMode extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        chooseType();
         setContentView(R.layout.activity_infinite_mode);
         displayProblem();
         buttonClick();
