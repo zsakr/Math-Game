@@ -8,6 +8,18 @@
     tools:context=".TimedGame">
 
     <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="156dp"
+        android:layout_height="144dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.38"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/boom" />
+
+    <ImageView
         android:id="@+id/fixedStreak2"
         android:layout_width="75dp"
         android:layout_height="70dp"
@@ -160,8 +172,8 @@
         app:fontFamily="@font/archivo_black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.416"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintVertical_bias="0.061" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

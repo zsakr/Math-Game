@@ -7,6 +7,19 @@
     tools:context=".InfiniteMode">
 
     <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="249dp"
+        android:layout_height="154dp"
+        android:layout_marginBottom="516dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/boom" />
+
+    <ImageView
         android:id="@+id/infinityStreak"
         android:layout_width="88dp"
         android:layout_height="71dp"
@@ -53,10 +66,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintHorizontal_bias="0.608"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.074" />
+        app:layout_constraintVertical_bias="0.081" />
 
     <TextView
         android:id="@+id/infNum1"
@@ -160,4 +173,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.418" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
