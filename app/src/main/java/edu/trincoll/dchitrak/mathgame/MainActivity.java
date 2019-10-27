@@ -1,3 +1,11 @@
+/*
+    Made by:
+        Bettina King-Smith
+        Edwin Aldrich
+        Ziad Sakr
+        Digesh Chitrakar
+ */
+
 package edu.trincoll.dchitrak.mathgame;
 
 
@@ -13,6 +21,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import edu.trincoll.dchitrak.mathgame.Difficulty;
+import edu.trincoll.dchitrak.mathgame.R;
 
 
 public class MainActivity extends AppCompatActivity {
