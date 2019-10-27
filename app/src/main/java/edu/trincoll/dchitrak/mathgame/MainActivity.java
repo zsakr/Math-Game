@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         press.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(SDifficulty,1,1,0,0, 2);
                 Intent startint = new Intent(getApplicationContext(), Difficulty.class);
                 startint.putExtra("gameType", "FixedGame.class");
 
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         timePress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(SDifficulty,1,1,0,0, 2);
                 Intent startint = new Intent(getApplicationContext(), Difficulty.class);
                 startint.putExtra("gameType", "TimedGame.class");
                 startActivity(startint);
@@ -50,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
         infinitePress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                soundPool.play(SDifficulty,1,1,0,0, 2);
                 Intent startint = new Intent(getApplicationContext(), Difficulty.class);
                 startint.putExtra("gameType", "InfiniteMode.class");
                 startActivity(startint);
