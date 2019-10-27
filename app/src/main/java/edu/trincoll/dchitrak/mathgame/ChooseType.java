@@ -65,7 +65,7 @@ public class ChooseType extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent startint = createIntent();
-                startint.putExtra("type", "dec");
+                startint.putExtra("type", "hex");
                 startActivity(startint);
             }
         });
