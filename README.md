@@ -12,7 +12,7 @@ Math
 
 AUTHORS:
 
-This is the code from YHack 2019 for the Blast Math team (Digesh, Edwin, Ziad, and Bettina).
+This is the code from YHack 2019 for the Blast Math team (Ziad, Digesh, Edwin, and Bettina).
 
 ------------------------------------------------------------------
 
